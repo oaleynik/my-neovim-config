@@ -8,16 +8,9 @@ return require('packer').startup(function()
   -- Essentials
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
-  use 'tpope/vim-fugitive'
   use 'editorconfig/editorconfig-vim'
-
-  -- General dev
-  use 'scrooloose/nerdcommenter'
   use 'mattn/emmet-vim'
-
-  -- Search
-  use 'tpope/vim-eunuch'
-  use 'tpope/vim-surround'
+  use { 'neoclide/coc.nvim', branch = 'release' }
 
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'

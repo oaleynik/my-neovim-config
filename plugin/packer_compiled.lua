@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
     url = "https://github.com/rafi/awesome-vim-colorschemes"
   },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
+  },
   ["editorconfig-vim"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
@@ -103,11 +108,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/minimalist",
     url = "https://github.com/dikiaap/minimalist"
-  },
-  nerdcommenter = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nerdcommenter",
-    url = "https://github.com/scrooloose/nerdcommenter"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -194,16 +194,6 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-colorscheme-primary",
     url = "https://github.com/google/vim-colorscheme-primary"
   },
-  ["vim-eunuch"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-eunuch",
-    url = "https://github.com/tpope/vim-eunuch"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
-  },
   ["vim-github-colorscheme"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-github-colorscheme",
@@ -218,11 +208,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-monokai",
     url = "https://github.com/sickill/vim-monokai"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
   },
   ["zenbones.nvim"] = {
     loaded = true,

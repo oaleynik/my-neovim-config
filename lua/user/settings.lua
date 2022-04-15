@@ -48,7 +48,7 @@ vim.o.formatoptions = 'qnj1' -- q - comment formatting; n - numbered lists; j - 
 vim.o.expandtab = true -- expand tab to spaces
 
 -- Backup files
-vim.o.backup = true -- use backup files
+vim.o.backup = false -- use backup files
 vim.o.writebackup = false
 vim.o.swapfile = false -- do not use swap file
 vim.o.undodir = HOME .. '/.vim/tmp/undo//' -- undo files
