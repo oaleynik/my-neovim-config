@@ -30,6 +30,7 @@ return require('packer').startup(function()
   use 'glepnir/lspsaga.nvim'
   use 'hrsh7th/nvim-compe'
   use 'scrooloose/nerdcommenter'
+  use 'mattn/emmet-vim'
 
   require'lspsaga'.init_lsp_saga {
     error_sign = '!',
