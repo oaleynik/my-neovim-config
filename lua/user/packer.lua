@@ -10,38 +10,10 @@ return require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons'
   use 'tpope/vim-fugitive'
   use 'editorconfig/editorconfig-vim'
-  use 'rhysd/vim-grammarous'
-  use 'andymass/vim-matchup'
-  use 'rhysd/git-messenger.vim'
-
-  -- GitSigns
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup({
-        current_line_blame = true,
-      })
-    end
-  }
 
   -- General dev
-  use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
-  use 'glepnir/lspsaga.nvim'
-  use 'hrsh7th/nvim-compe'
   use 'scrooloose/nerdcommenter'
   use 'mattn/emmet-vim'
-
-  require'lspsaga'.init_lsp_saga {
-    error_sign = '!',
-    warn_sign = '^',
-    hint_sign = '?',
-    infor_sign = '~',
-    border_style = 'round',
-    code_action_prompt = {
-      enable = false,
-    }
-  }
 
   -- Search
   use 'tpope/vim-eunuch'
@@ -59,11 +31,6 @@ return require('packer').startup(function()
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
-  -- JavaScript
-  use { 'HerringtonDarkholme/yats.vim', ft = 'typescript' }
-  use 'posva/vim-vue'
-  use 'othree/javascript-libraries-syntax.vim'
 
   -- Themes
   use 'morhetz/gruvbox'
