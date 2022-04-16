@@ -66,3 +66,19 @@ nmap('<leader>hh', '<cmd>Telescope help_tags<cr>')
 -- NvimTree
 map('', '<C-k>b', '<cmd>NvimTreeToggle<cr>')
 map('', '<leader>n', '<cmd>NvimTreeFocus<cr>')
+
+-- Terminal
+map('t', 'jk', '<C-\\><C-n>') -- exit terminal insert mode
+map("t", "<leader>tt", '<C-\\><C-n> :FloatermToggle <CR>') -- toggle terminal
+map("n", "<Leader>tt", ":FloatermToggle <CR>")
+map("t", "<leader>t[", '<C-\\><C-n> :FloatermPrev <CR>') -- switch terminals
+map("t", "<leader>t]", '<C-\\><C-n> :FloatermNext <CR>')
+map("n", "<leader>t[", ':FloatermPrev <CR>')
+map("n", "<leader>t]", ':FloatermNext <CR>')
+map("n", "<Leader>tn", ":FloatermNew <CR>") -- open new terminal
+map("n", "<Leader>td", ":FloatermKill <CR>") -- kill terminal
+
+-- LazyGit
+local lazygit_cmd = ":FloatermNew --height=0.9 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit <CR>"
+map("n", "<leader>gg", lazygit_cmd)
+map("n", "<leader>gb", ":G blame <CR>")

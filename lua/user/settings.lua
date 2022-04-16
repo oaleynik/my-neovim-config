@@ -16,7 +16,7 @@ vim.o.ttimeoutlen = 100
 vim.o.showmatch = true -- show matching brackets
 vim.o.scrolloff = 3 -- always show 3 rows from edge of the screen
 vim.o.synmaxcol = 2000
-vim.o.laststatus = 2 -- always show status line
+vim.o.laststatus = 3 -- always show status line
 
 vim.o.list = false
 vim.o.foldenable = false
@@ -72,4 +72,4 @@ vim.cmd([[
 
 -- Theme
 vim.o.background = 'dark'
-vim.cmd('colorscheme meta5')
+vim.cmd('colorscheme molokai')
