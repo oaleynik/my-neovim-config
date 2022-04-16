@@ -11,6 +11,7 @@ return require('packer').startup(function()
   use 'editorconfig/editorconfig-vim'
   use 'mattn/emmet-vim'
   use { 'neoclide/coc.nvim', branch = 'release' }
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'
