@@ -82,3 +82,6 @@ map("n", "<Leader>td", ":FloatermKill <CR>") -- kill terminal
 local lazygit_cmd = ":FloatermNew --height=0.9 --width=0.9 --wintype=float --name=lazygit --autoclose=2 lazygit <CR>"
 map("n", "<leader>gg", lazygit_cmd)
 map("n", "<leader>gb", ":G blame <CR>")
+
+-- Emmet
+vim.g.user_emmet_leader_key = '<leader>e'
