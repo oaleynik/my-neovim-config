@@ -6,6 +6,7 @@ vim.o.backspace = 'indent,eol,start'
 vim.o.completeopt = 'menuone,noselect'
 vim.o.history = 5000
 vim.o.startofline = true
+vim.o.termguicolors = true
 
 -- Mapping waiting time
 vim.o.timeout = false
