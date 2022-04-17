@@ -38,6 +38,7 @@ return require('packer').startup(function()
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Themes
+  use 'rktjmp/lush.nvim'
   use 'morhetz/gruvbox'
   use 'altercation/vim-colors-solarized'
   use 'NLKNguyen/papercolor-theme'
