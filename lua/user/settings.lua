@@ -72,5 +72,5 @@ vim.cmd([[
 ]])
 
 -- Theme
-vim.o.background = 'dark'
-vim.cmd('colorscheme molokai')
+vim.o.background = 'light'
+vim.cmd('colorscheme zenbones')
