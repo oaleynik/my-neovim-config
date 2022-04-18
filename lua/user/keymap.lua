@@ -84,4 +84,4 @@ map("n", "<leader>gg", lazygit_cmd)
 map("n", "<leader>gb", ":G blame <CR>")
 
 -- Emmet
-vim.g.user_emmet_leader_key = '<leader>e'
+vim.g.user_emmet_leader_key = '<C-c>'
