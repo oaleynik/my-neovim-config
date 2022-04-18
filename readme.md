@@ -5,7 +5,7 @@
 3. Start nvim and install plugins with `:PackerInstall`
 4. Install COC plugins:  
   ```
-  :CocInstall coc-html coc-tsserver coc-json coc-css @yaegassy/coc-volar-tools @yaegassy/cock-volar
+  :CocInstall coc-html coc-tsserver coc-json coc-css @yaegassy/coc-volar-tools @yaegassy/coc-volar
   ```
 
 ## Install Nerd Fonts

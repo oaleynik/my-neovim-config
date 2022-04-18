@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   meta5 = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/meta5",
