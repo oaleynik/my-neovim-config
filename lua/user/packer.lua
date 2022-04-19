@@ -6,13 +6,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Essentials
-  use 'editorconfig/editorconfig-vim'
-  use 'glepnir/lspsaga.nvim'
-  use 'hrsh7th/nvim-compe'
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
   use 'kyazdani42/nvim-web-devicons'
-  use 'lewis6991/gitsigns.nvim'
   use 'mattn/emmet-vim'
   use 'nvim-lua/plenary.nvim'
   use 'ryanoasis/vim-devicons'
@@ -22,7 +16,6 @@ return require('packer').startup(function()
   use 'voldikss/vim-floaterm'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
-  use { 'neoclide/coc.nvim', branch = 'release' }
 
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'

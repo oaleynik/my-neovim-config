@@ -74,35 +74,15 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/awesome-vim-colorschemes",
     url = "https://github.com/rafi/awesome-vim-colorschemes"
   },
-  ["coc.nvim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "https://github.com/neoclide/coc.nvim"
-  },
-  ["editorconfig-vim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
-    url = "https://github.com/editorconfig/editorconfig-vim"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  ["gitsigns.nvim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
   gruvbox = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -124,25 +104,10 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/minimalist",
     url = "https://github.com/dikiaap/minimalist"
   },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
-  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-compe",
-    url = "https://github.com/hrsh7th/nvim-compe"
-  },
-  ["nvim-lsp-ts-utils"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils",
-    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
