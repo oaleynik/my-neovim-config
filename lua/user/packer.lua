@@ -14,6 +14,13 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'voldikss/vim-floaterm'
   use 'windwp/nvim-autopairs'
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release',
+    config = function ()
+      require('gitsigns').setup()
+    end,
+  }
 
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'

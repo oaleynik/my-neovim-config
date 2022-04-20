@@ -18,3 +18,15 @@ To have terminal icons appearing you need one of the patched fonts installed.
 
   brew install --cask <ANY_FONT_FROM_THE_OUTPUT>
   ```
+
+## The list of plugins I would like to explore
+- [git-messenger.vim](https://github.com/rhysd/git-messenger.vim)
+- [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [committia.vim](https://github.com/rhysd/committia.vim)
+- [octo.nvim](https://github.com/pwntester/octo.nvim)
+- [neogen](https://github.com/danymat/neogen)
+- [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
+- [limelight.vim](https://github.com/junegunn/limelight.vim)
+- [goyo.vim](https://github.com/junegunn/goyo.vim)
+- [twilight.nvim](https://github.com/folke/twilight.nvim)
+- [zen-mode.nvim](https://github.com/folke/zen-mode.nvim)
