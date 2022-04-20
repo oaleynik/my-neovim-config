@@ -84,4 +84,10 @@ map("n", "<leader>gg", lazygit_cmd)
 map("n", "<leader>gb", ":G blame <CR>")
 
 -- Emmet
-vim.g.user_emmet_leader_key = '<C-c>'
+-- vim.g.user_emmet_leader_key = '<C-c>'
+
+-- This will allow to remap [[ ]] [] ][ sequences to be used if { or } is not in the first column
+     -- :map [[ ?{<CR>w99[{
+     -- :map ][ /}<CR>b99]}
+     -- :map ]] j0[[%/{<CR>
+     -- :map [] k$][%?}<CR>
