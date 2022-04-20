@@ -6,16 +6,14 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Essentials
-  use 'kyazdani42/nvim-web-devicons'
-  use 'mattn/emmet-vim'
   use 'nvim-lua/plenary.nvim'
+  use 'kyazdani42/nvim-web-devicons'
   use 'ryanoasis/vim-devicons'
   use 'tpope/vim-commentary'
-  use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
+  use 'tpope/vim-fugitive'
   use 'voldikss/vim-floaterm'
   use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
   use 'neovim/nvim-lspconfig'
 
   -- NvimTree
