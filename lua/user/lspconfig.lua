@@ -1,3 +1,7 @@
+local lspconfig = require'lspconfig'
+local lspconfig_configs = require'lspconfig.configs'
+local lspconfig_util = require 'lspconfig.util'
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -29,15 +33,32 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+local function on_new_config(new_config, new_root_dir)
+  local function get_typescript_server_path(root_dir)
+    local project_root = lspconfig_util.find_node_modules_ancestor(root_dir)
+    local local_server_path = project_root and (lspconfig_util.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js'))
+    local local_server_exists = local_server_path and (lspconfig_util.path.exists(local_server_path))
+    return (local_server_exists and local_server_path) or '/Users/oaleinyk/Library/Application Support/fnm/aliases/default/lib/node_modules/typescript/lib/tsserverlibrary.js'
+  end
+
+  if
+    new_config.init_options
+    and new_config.init_options.typescript
+    and new_config.init_options.typescript.serverPath == ''
+  then
+    new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+  end
+end
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'tsserver', 'jsonls', 'cssls', 'html', 'volar' }
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
+  lspconfig[lsp].setup {
     on_attach = on_attach,
+    on_new_config = on_new_config,
     flags = {
-      -- This will be the default in neovim 0.7+
       debounce_text_changes = 150,
     }
-  }
+  } 
 end
