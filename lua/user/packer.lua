@@ -16,6 +16,7 @@ return require('packer').startup(function()
   use 'voldikss/vim-floaterm'
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use 'neovim/nvim-lspconfig'
 
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'
