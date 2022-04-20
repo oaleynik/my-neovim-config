@@ -73,4 +73,4 @@ vim.cmd([[
 
 -- Theme
 vim.o.background = 'light'
-vim.cmd('colorscheme zenbones')
+vim.cmd('colorscheme PaperColor')
