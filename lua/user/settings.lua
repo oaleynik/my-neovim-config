@@ -29,6 +29,7 @@ vim.o.showbreak = '↪' -- character to show when line is broken
 
 -- Sidebar
 vim.o.number = true
+vim.o.relativenumber = true
 vim.o.numberwidth = 3
 vim.o.signcolumn = 'yes' -- keep 1 column for coc.vim check
 vim.o.modelines = 0
