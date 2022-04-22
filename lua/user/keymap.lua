@@ -64,7 +64,7 @@ nmap('<leader>bb', '<cmd>Telescope buffers<cr>')
 nmap('<leader>hh', '<cmd>Telescope help_tags<cr>')
 
 -- NvimTree
-map('', '<C-k>b', '<cmd>NvimTreeToggle<cr>')
+map('', '<leader>\\', '<cmd>NvimTreeToggle<cr>')
 map('', '<leader>n', '<cmd>NvimTreeFocus<cr>')
 
 -- Terminal
