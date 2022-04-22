@@ -73,7 +73,7 @@ vim.cmd([[
 
 -- Theme
 local colorbuddy = require('colorbuddy')
-local Color, colors, Group, groups, styles = colorbuddy.setup()
+local _, _, Group, groups, styles = colorbuddy.setup()
 
 vim.o.termguicolors = true
 vim.o.background = 'light'

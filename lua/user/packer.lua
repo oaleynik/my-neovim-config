@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'voldikss/vim-floaterm'
+  use 'tjdevries/cyclist.vim'
   use {
     'lewis6991/gitsigns.nvim',
     tag = 'release',
