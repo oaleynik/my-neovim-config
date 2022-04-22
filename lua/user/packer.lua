@@ -23,6 +23,18 @@ return require('packer').startup(function(use)
     end,
   }
 
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  -- Completion
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'L3MON4D3/LuaSnip'
+  use 'onsails/lspkind.nvim'
+
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'
 
