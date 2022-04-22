@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
   use 'onsails/lspkind.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
   -- NvimTree
   use 'kyazdani42/nvim-tree.lua'

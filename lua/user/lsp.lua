@@ -42,8 +42,8 @@ cmp.setup {
     { name = 'path' },
     { name = 'luasnip' },
   }, {
-    { name = 'buffer', keyword_length = 5 },
-  }),
+      { name = 'buffer', keyword_length = 5 },
+    }),
   formatting = {
     format = lspkind.cmp_format {
       mode = 'symbol_text',
@@ -150,3 +150,12 @@ lspconfig.volar.setup {
     new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
   end,
 }
+
+-- null-ls
+require('null-ls').setup({
+  sources = {
+    require('null-ls').builtins.formatting.stylua,
+    require('null-ls').builtins.diagnostics.eslint,
+    require('null-ls').builtins.completion.spell,
+  },
+})
