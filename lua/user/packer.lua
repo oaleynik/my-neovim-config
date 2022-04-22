@@ -30,6 +30,7 @@ return require('packer').startup(function()
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
