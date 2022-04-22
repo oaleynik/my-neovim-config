@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     tag = 'release',
-    config = function ()
+    config = function()
       require('gitsigns').setup()
     end,
   }
@@ -47,12 +47,16 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- Autopairs
-  use { 'windwp/nvim-autopairs', config = function () require('nvim-autopairs').setup{} end }
-  use { 'windwp/nvim-ts-autotag', config = function () require('nvim-ts-autotag').setup{} end }
+  use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup{} end }
+  use { 'windwp/nvim-ts-autotag', config = function() require('nvim-ts-autotag').setup{} end }
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  -- Zen
+  use 'junegunn/limelight.vim'
+  use 'junegunn/goyo.vim'
 
   -- Themes
   use 'rktjmp/lush.nvim'

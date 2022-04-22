@@ -83,6 +83,9 @@ local lazygit_cmd = ':FloatermNew --height=0.9 --width=0.9 --wintype=float --nam
 map('n', '<leader>gg', lazygit_cmd)
 map('n', '<leader>gb', ':G blame <CR>')
 
+-- Goyo
+nmap('<leader>z', ':Goyo <cr>')
+
 -- Emmet
 -- vim.g.user_emmet_leader_key = '<C-c>'
 

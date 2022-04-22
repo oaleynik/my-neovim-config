@@ -14,7 +14,7 @@ vim.o.ttimeoutlen = 100
 
 -- Display
 vim.o.showmatch = true -- show matching brackets
-vim.o.scrolloff = 3 -- always show 3 rows from edge of the screen
+vim.o.scrolloff = 7 -- always show 3 rows from edge of the screen
 vim.o.synmaxcol = 2000
 vim.o.laststatus = 3 -- always show status line
 
@@ -85,3 +85,18 @@ Group.new('CmpItemAbbrDeprecated', groups.Error)
 Group.new('CmpItemAbbrMatchFuzzy', groups.Comment.fg:dark(), nil, styles.italic)
 Group.new('CmpItemKind', groups.Special)
 Group.new('CmpItemMenu', groups.NonText)
+
+--Goyo
+vim.cmd([[
+  autocmd User GoyoEnter Limelight
+  autocmd User GoyoLeave Limelight!
+  autocmd User GoyoEnter set nocursorline
+  autocmd User GoyoLeave set cursorline
+  autocmd User GoyoEnter set noshowcmd
+  autocmd User GoyoLeave set showcmd
+]])
+
+vim.g.limelight_conceal_ctermfg = 'Gray'
+vim.g.goyo_width = 120
+vim.g.goyo_height = '95%'
+vim.g.goyo_linenr = 1
