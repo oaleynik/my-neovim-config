@@ -6,7 +6,6 @@ vim.o.backspace = 'indent,eol,start'
 vim.o.completeopt = 'menuone,noselect'
 vim.o.history = 5000
 vim.o.startofline = true
-vim.o.termguicolors = true
 
 -- Mapping waiting time
 vim.o.timeout = false
@@ -73,5 +72,16 @@ vim.cmd([[
 ]])
 
 -- Theme
+local colorbuddy = require('colorbuddy')
+local Color, colors, Group, groups, styles = colorbuddy.setup()
+
+vim.o.termguicolors = true
 vim.o.background = 'light'
-vim.cmd('colorscheme PaperColor')
+
+colorbuddy.colorscheme('PaperColor', true)
+
+Group.new('CmpItemAbbr', groups.Comment)
+Group.new('CmpItemAbbrDeprecated', groups.Error)
+Group.new('CmpItemAbbrMatchFuzzy', groups.Comment.fg:dark(), nil, styles.italic)
+Group.new('CmpItemKind', groups.Special)
+Group.new('CmpItemMenu', groups.NonText)
