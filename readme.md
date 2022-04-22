@@ -5,8 +5,10 @@
 3. Start nvim and install plugins with `:PackerInstall`
 4. Install language servers 
   ```bash
-  npm i -g @volar/vue-language-server typescript typescript-language-server
+  npm i -g @volar/vue-language-server typescript typescript-language-server vscode-langservers-extracted
   go install golang.org/x/tools/gopls@latest # By default installs to /Users/<username>/go/bin <- add this to your PATH
+
+  export NVIM_LSP_TSSERVER_PATH = "<path/to/tsserverlanguage.js>" 
   ```
 
 ## Install Nerd Fonts
