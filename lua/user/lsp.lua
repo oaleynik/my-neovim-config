@@ -95,7 +95,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'tsserver', 'gopls' }
+local servers = { 'tsserver', 'gopls', 'html', 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
