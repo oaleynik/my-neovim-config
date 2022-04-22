@@ -3,9 +3,10 @@
 1. Install `packer.nvim`
 2. Clone this repository to `~/.config/nvim`
 3. Start nvim and install plugins with `:PackerInstall`
-4. Install COC plugins:  
-  ```
-  :CocInstall coc-html coc-tsserver coc-json coc-css @yaegassy/coc-volar-tools @yaegassy/coc-volar
+4. Install language servers 
+  ```bash
+  npm i -g @volar/vue-language-server typescript typescript-language-server
+  go install golang.org/x/tools/gopls@latest # By default installs to /Users/<username>/go/bin <- add this to your PATH
   ```
 
 ## Install Nerd Fonts
