@@ -14,7 +14,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'voldikss/vim-floaterm'
-  use 'windwp/nvim-autopairs'
+  use { 'windwp/nvim-autopairs', config = function () require('nvim-autopairs').setup() end }
+  use { 'windwp/nvim-ts-autotag', config = function () require('nvim-ts-autotag').setup() end }
   use {
     'lewis6991/gitsigns.nvim',
     tag = 'release',
