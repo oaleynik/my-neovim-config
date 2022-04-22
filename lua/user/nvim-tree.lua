@@ -28,7 +28,7 @@ require'nvim-tree'.setup {
   },
   renderer = {
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
         corner = '└ ',
         edge = '│ ',
@@ -51,8 +51,8 @@ require'nvim-tree'.setup {
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     icons = {
       hint = '',
       info = '',
@@ -103,5 +103,5 @@ require'nvim-tree'.setup {
       git = false,
       profile = false,
     },
-  }, 
+  },
 }
