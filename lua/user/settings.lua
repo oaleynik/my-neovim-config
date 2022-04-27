@@ -94,6 +94,10 @@ vim.cmd([[
   autocmd User GoyoLeave set cursorline
   autocmd User GoyoEnter set noshowcmd
   autocmd User GoyoLeave set showcmd
+  autocmd User GoyoEnter set tw=120
+  autocmd User GoyoLeave set tw=0
+  autocmd User GoyoEnter set wrap
+  autocmd User GoyoLeave set nowrap
 ]])
 
 vim.g.limelight_conceal_ctermfg = 'Gray'
