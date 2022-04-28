@@ -62,13 +62,13 @@ vim.o.wildignore = 'deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,
 
 -- Only show cursorline in the current window and in normal mode
 vim.cmd([[
-	augroup cline
-		au!
-		au WinLeave * set nocursorline
-		au WinEnter * set cursorline
-		au InsertEnter * set nocursorline
-		au InsertLeave * set cursorline
-	augroup END
+  augroup cline
+    au!
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+  augroup END
 ]])
 
 -- Theme
