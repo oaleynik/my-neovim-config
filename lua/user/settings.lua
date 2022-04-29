@@ -71,6 +71,10 @@ vim.cmd([[
   augroup END
 ]])
 
+vim.cmd([[
+  autocmd ColorScheme * highlight! link SignColumn LineNr
+]])
+
 -- Theme
 local colorbuddy = require('colorbuddy')
 local _, _, Group, groups, styles = colorbuddy.setup()
