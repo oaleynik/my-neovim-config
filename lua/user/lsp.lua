@@ -86,7 +86,7 @@ local on_attach = function(_, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'tsserver', 'gopls', 'html', 'cssls', 'jsonls' }
+local servers = { 'gopls', 'html', 'cssls', 'jsonls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -143,7 +143,7 @@ local function get_typescript_server_path(root_dir)
 end
 
 lspconfig.volar.setup {
-  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }, -- This enables Take Over mode
   on_attach = on_attach,
   capabilities = capabilities,
   on_new_config = function(new_config, new_root_dir)
