@@ -46,8 +46,8 @@ cmp.setup {
     { name = 'path' },
     { name = 'luasnip' },
   }, {
-      { name = 'buffer', keyword_length = 6 },
-    }),
+    { name = 'buffer', keyword_length = 6 },
+  }),
   formatting = {
     format = lspkind.cmp_format {
       mode = 'symbol_text',
@@ -71,12 +71,13 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'ga', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
@@ -96,9 +97,9 @@ local on_attach = function(client, bufnr)
 
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    buf_set_keymap('n', 'ff', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   elseif client.resolved_capabilities.document_range_formatting then
-    buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+    buf_set_keymap('n', 'ff', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
   end
 
   -- Set autocommands conditional on server_capabilities
@@ -158,8 +159,8 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
-lspconfig.gopls.setup{
-  cmd = {'gopls'},
+lspconfig.gopls.setup {
+  cmd = { 'gopls' },
   -- for postfix snippets and analyzers
   capabilities = capabilities,
   settings = {
@@ -177,16 +178,17 @@ lspconfig.gopls.setup{
   on_attach = on_attach,
 }
 
-function goimports(timeoutms)
+function Goimports(timeoutms)
   local context = { source = { organizeImports = true } }
-  vim.validate { context = { context, "t", true } }
+---@diagnostic disable-next-line: redundant-parameter
+  vim.validate { context = { context, 't', true } }
 
   local params = vim.lsp.util.make_range_params()
   params.context = context
 
   -- See the implementation of the textDocument/codeAction callback
   -- (lua/vim/lsp/handler.lua) for how to do this properly.
-  local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
+  local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, timeoutms)
   if not result or next(result) == nil then return end
   local actions = result[1].result
   if not actions then return end
@@ -195,11 +197,11 @@ function goimports(timeoutms)
   -- textDocument/codeAction can return either Command[] or CodeAction[]. If it
   -- is a CodeAction, it can have either an edit, a command or both. Edits
   -- should be executed first.
-  if action.edit or type(action.command) == "table" then
+  if action.edit or type(action.command) == 'table' then
     if action.edit then
       vim.lsp.util.apply_workspace_edit(action.edit, 'utf-8')
     end
-    if type(action.command) == "table" then
+    if type(action.command) == 'table' then
       vim.lsp.buf.execute_command(action.command)
     end
   else

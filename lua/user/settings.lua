@@ -102,5 +102,5 @@ Group.new('CmpItemMenu', groups.NonText)
 -- LSP
 vim.cmd([[
   autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
-  autocmd BufWritePre *.go lua goimports(1000)
+  autocmd BufWritePre *.go lua Goimports(1000)
 ]])
