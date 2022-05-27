@@ -1,6 +1,72 @@
-local nvim_lsp = require('lspconfig')
+local cmp = require('cmp')
+local lspconfig = require('lspconfig')
+local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-e>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'luasnip' },
+  }, {
+      { name = 'buffer', keyword_length = 6 },
+    }),
+  formatting = {
+    format = lspkind.cmp_format {
+      mode = 'symbol_text',
+      preset = 'default',
+      menu = {
+        buffer = '[buf]',
+        nvim_lsp = '[LSP]',
+        nvim_lua = '[api]',
+        path = '[path]',
+        luasnip = '[snip]',
+      },
+    },
+  },
+  experimental = {
+    ghost_text = true,
+  },
+}
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client, bufnr)
@@ -50,7 +116,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
-nvim_lsp.gopls.setup{
+lspconfig.gopls.setup{
   cmd = {'gopls'},
   -- for postfix snippets and analyzers
   capabilities = capabilities,
@@ -89,7 +155,7 @@ function goimports(timeoutms)
   -- should be executed first.
   if action.edit or type(action.command) == "table" then
     if action.edit then
-      vim.lsp.util.apply_workspace_edit(action.edit)
+      vim.lsp.util.apply_workspace_edit(action.edit, 'utf-8')
     end
     if type(action.command) == "table" then
       vim.lsp.buf.execute_command(action.command)
