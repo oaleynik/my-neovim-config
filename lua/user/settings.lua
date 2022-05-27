@@ -98,3 +98,9 @@ Group.new('CmpItemAbbrDeprecated', groups.Error)
 Group.new('CmpItemAbbrMatchFuzzy', groups.Comment.fg:dark(), nil, styles.italic)
 Group.new('CmpItemKind', groups.Special)
 Group.new('CmpItemMenu', groups.NonText)
+
+-- LSP
+vim.cmd([[
+  autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+  autocmd BufWritePre *.go lua goimports(1000)
+]])

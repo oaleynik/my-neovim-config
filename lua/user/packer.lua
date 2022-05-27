@@ -13,6 +13,9 @@ require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-vinegar'
 
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+
   -- LuaLine
   use 'nvim-lualine/lualine.nvim'
 
