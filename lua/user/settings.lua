@@ -11,6 +11,7 @@ vim.o.startofline = true
 vim.o.timeout = false
 vim.o.ttimeout = true
 vim.o.ttimeoutlen = 100
+vim.o.updatetime = 1000
 
 -- Display
 vim.o.showmatch = true -- show matching brackets
