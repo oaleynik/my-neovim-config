@@ -44,6 +44,7 @@ require('packer').startup(function(use)
   use 'preservim/vim-colors-pencil'
   use 'NLKNguyen/papercolor-theme'
   use 'pbrisbin/vim-colors-off'
+  use 'Konstantin8105/gomin'
 end)
 
 return

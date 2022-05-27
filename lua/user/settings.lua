@@ -89,7 +89,7 @@ local colorbuddy = require('colorbuddy')
 local _, _, Group, groups, styles = colorbuddy.setup()
 
 vim.o.termguicolors = true
-vim.o.background = 'dark'
+vim.o.background = 'light'
 
 colorbuddy.colorscheme('pencil', vim.o.background == 'light')
 
