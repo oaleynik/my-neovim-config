@@ -59,12 +59,12 @@ vim.o.directory = '/.vim/tmp/swap//' -- swap files
 
 -- netrw
 -- vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
 -- vim.g.netrw_browse_split = 4
 -- vim.g.netrw_preview = 1
 -- vim.g.netrw_winsize = 85
 -- vim.g.netrw_alto = 0
 -- vim.g.netrw_altv = 0
+vim.g.netrw_liststyle = 3
 
 -- Commands mode
 vim.o.wildmenu = true -- on TAB, complete options for system command
@@ -73,16 +73,23 @@ vim.o.wildignore = 'deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,
 -- Only show cursorline in the current window and in normal mode
 vim.cmd([[
   augroup cline
-    au!
-    au WinLeave * set nocursorline
-    au WinEnter * set cursorline
-    au InsertEnter * set nocursorline
-    au InsertLeave * set cursorline
+  au!
+  au WinLeave * set nocursorline
+  au WinEnter * set cursorline
+  au InsertEnter * set nocursorline
+  au InsertLeave * set cursorline
   augroup END
 ]])
 
 vim.cmd([[
   autocmd ColorScheme * highlight! link SignColumn LineNr
+]])
+
+vim.cmd([[
+  autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$")
+  \ |   exe "normal! g`\""
+  \ | endif
 ]])
 
 -- Theme
