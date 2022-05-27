@@ -45,6 +45,12 @@ require('packer').startup(function(use)
   use 'NLKNguyen/papercolor-theme'
   use 'pbrisbin/vim-colors-off'
   use 'Konstantin8105/gomin'
+  use 'folke/tokyonight.nvim'
+  use 'jacoborus/tender.vim'
+  use 'EdenEast/nightfox.nvim'
+  use 'savq/melange'
+  use 'rockerBOO/boo-colorscheme-nvim'
+  use 'elvessousa/sobrio'
 end)
 
 return
