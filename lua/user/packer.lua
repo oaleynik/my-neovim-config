@@ -51,6 +51,7 @@ require('packer').startup(function(use)
   use 'savq/melange'
   use 'rockerBOO/boo-colorscheme-nvim'
   use 'elvessousa/sobrio'
+  use { 'rose-pine/neovim', as = 'rose-pine' }
 end)
 
 return
