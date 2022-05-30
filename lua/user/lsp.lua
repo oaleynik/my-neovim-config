@@ -126,6 +126,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- Custom setup for lua LSP
 -- Make runtime files discoverable to the server
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
@@ -159,6 +160,7 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
+-- Custom setup for golang LSP
 lspconfig.gopls.setup {
   cmd = { 'gopls' },
   -- for postfix snippets and analyzers
@@ -208,3 +210,28 @@ function Goimports(timeoutms)
     vim.lsp.buf.execute_command(action)
   end
 end
+
+-- Custom setup for vue LSP
+local lsputil = require('lspconfig.util')
+
+local function get_typescript_server_path(root_dir)
+  local project_root = lsputil.find_node_modules_ancestor(root_dir)
+
+  local local_tsserverlib = project_root ~= nil and lsputil.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js')
+  local global_tsserverlib = os.getenv('NVIM_LSP_TSSERVER_PATH')
+
+  if local_tsserverlib and lsputil.path.exists(local_tsserverlib) then
+    return local_tsserverlib
+  else
+    return global_tsserverlib
+  end
+end
+
+lspconfig.volar.setup {
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }, -- This enables Take Over mode
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_new_config = function(new_config, new_root_dir)
+    new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
+  end,
+}
