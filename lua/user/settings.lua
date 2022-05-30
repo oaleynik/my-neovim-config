@@ -92,21 +92,6 @@ vim.cmd([[
   \ | endif
 ]])
 
--- Theme
-local colorbuddy = require('colorbuddy')
-local _, _, Group, groups, styles = colorbuddy.setup()
-
-vim.o.termguicolors = true
-vim.o.background = 'dark'
-
-colorbuddy.colorscheme('melange', vim.o.background == 'light')
-
-Group.new('CmpItemAbbr', groups.Comment)
-Group.new('CmpItemAbbrDeprecated', groups.Error)
-Group.new('CmpItemAbbrMatchFuzzy', groups.Comment.fg:dark(), nil, styles.italic)
-Group.new('CmpItemKind', groups.Special)
-Group.new('CmpItemMenu', groups.NonText)
-
 -- LSP
 vim.cmd([[
   autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
