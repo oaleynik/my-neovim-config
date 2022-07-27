@@ -54,6 +54,8 @@ require('packer').startup(function(use)
   use 'elvessousa/sobrio'
   use 'rebelot/kanagawa.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
+  use 'projekt0n/github-nvim-theme'
+  use({ 'catppuccin/nvim', as = 'catppuccin' })
 end)
 
 return
