@@ -41,6 +41,15 @@ require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+  -- Emmet
+  use 'mattn/emmet-vim'
+
+  -- Protocol Buffers
+  use 'uarun/vim-protobuf'
+  
+  -- Golang delve integration
+  use 'sebdah/vim-delve'
+
   -- Themes
   use 'preservim/vim-colors-pencil'
   use 'NLKNguyen/papercolor-theme'
