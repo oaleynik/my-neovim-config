@@ -65,6 +65,8 @@ require('packer').startup(function(use)
   use { 'rose-pine/neovim', as = 'rose-pine' }
   use 'projekt0n/github-nvim-theme'
   use({ 'catppuccin/nvim', as = 'catppuccin' })
+  use 'gosukiwi/vim-atom-dark'
+  use 'joshdick/onedark.vim'
 end)
 
 return
