@@ -33,7 +33,7 @@ telescope.setup {
       theme = 'dropdown',
       hijack_netrw = true,
       initial_mode = 'normal',
-      respect_git_ignore = false,
+      respect_gitignore = false,
       hidden = true,
       grouped = true,
       layout_config = {
