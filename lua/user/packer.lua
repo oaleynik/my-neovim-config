@@ -39,34 +39,30 @@ require('packer').startup(function(use)
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use '/opt/homebrew/opt/fzf'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Emmet
   use 'mattn/emmet-vim'
 
-  -- Protocol Buffers
-  use 'uarun/vim-protobuf'
-  
-  -- Golang delve integration
-  use 'sebdah/vim-delve'
-
   -- Themes
-  use 'preservim/vim-colors-pencil'
-  use 'NLKNguyen/papercolor-theme'
-  use 'pbrisbin/vim-colors-off'
-  use 'Konstantin8105/gomin'
-  use 'folke/tokyonight.nvim'
-  use 'jacoborus/tender.vim'
   use 'EdenEast/nightfox.nvim'
-  use 'savq/melange'
-  use 'rockerBOO/boo-colorscheme-nvim'
+  use 'Konstantin8105/gomin'
+  use 'NLKNguyen/papercolor-theme'
   use 'elvessousa/sobrio'
-  use 'rebelot/kanagawa.nvim'
-  use { 'rose-pine/neovim', as = 'rose-pine' }
-  use 'projekt0n/github-nvim-theme'
-  use({ 'catppuccin/nvim', as = 'catppuccin' })
+  use 'folke/tokyonight.nvim'
   use 'gosukiwi/vim-atom-dark'
+  use 'jacoborus/tender.vim'
   use 'joshdick/onedark.vim'
+  use 'pbrisbin/vim-colors-off'
+  use 'preservim/vim-colors-pencil'
+  use 'projekt0n/github-nvim-theme'
+  use 'rebelot/kanagawa.nvim'
+  use 'rockerBOO/boo-colorscheme-nvim'
+  use 'savq/melange'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use { 'rose-pine/neovim', as = 'rose-pine' }
 end)
 
 return

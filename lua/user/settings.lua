@@ -58,12 +58,6 @@ vim.o.backupdir = HOME .. '/.vim/tmp/backup//' -- backups
 vim.o.directory = '/.vim/tmp/swap//' -- swap files
 
 -- netrw
--- vim.g.netrw_banner = 0
--- vim.g.netrw_browse_split = 4
--- vim.g.netrw_preview = 1
--- vim.g.netrw_winsize = 85
--- vim.g.netrw_alto = 0
--- vim.g.netrw_altv = 0
 vim.g.netrw_liststyle = 3
 
 -- Commands mode

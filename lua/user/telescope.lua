@@ -1,4 +1,27 @@
-require('telescope').setup {
+local status, telescope = pcall(require, 'telescope')
+if (not status) then return end
+
+local actions = require('telescope.actions')
+local builtin = require('telescope.builtin')
+
+function Telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
+local fb_actions = require 'telescope'.extensions.file_browser.actions
+
+telescope.setup {
+  defaults = {
+    layout_strategy = 'vertical',
+    layout_config = {
+      width = 0.8,
+    },
+    mappings = {
+      n = {
+        ['q'] = actions.close
+      }
+    }
+  },
   extensions = {
     fzf = {
       fuzzy = true,
@@ -6,7 +29,83 @@ require('telescope').setup {
       override_file_sorter = true,
       case_mode = 'smart_case',
     },
-  },
+    file_browser = {
+      theme = 'dropdown',
+      hijack_netrw = true,
+      initial_mode = 'normal',
+      respect_git_ignore = false,
+      hidden = true,
+      grouped = true,
+      layout_config = {
+        width = 0.8,
+      },
+      mappings = {
+        ['i'] = {
+          ['<C-w>'] = function() vim.cmd('normal vbd') end,
+        },
+        ['n'] = {
+          ['N'] = fb_actions.create,
+          ['C-x'] = fb_actions.remove,
+          ['h'] = fb_actions.goto_parent_dir,
+          ['/'] = function()
+            vim.cmd('startinsert')
+          end
+        }
+      }
+    }
+  }
 }
 
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
+telescope.load_extension('file_browser')
+
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set('n', ';f', function()
+  builtin.find_files({
+    no_ignore = true,
+    hidden = true
+  })
+end, opts)
+
+vim.keymap.set('n', 'ff', function()
+  builtin.current_buffer_fuzzy_find()
+end, opts)
+
+vim.keymap.set('n', ';r', function()
+  builtin.live_grep()
+end, opts)
+
+vim.keymap.set('n', '\\\\', function()
+  builtin.buffers()
+end, opts)
+
+vim.keymap.set('n', ';t', function()
+  builtin.help_tags()
+end, opts)
+
+vim.keymap.set('n', ';h', function()
+  builtin.builtin()
+end, opts)
+
+vim.keymap.set('n', ';;', function()
+  builtin.resume()
+end, opts)
+
+vim.keymap.set('n', ';e', function()
+  builtin.diagnostics()
+end, opts)
+
+vim.keymap.set('n', ';w', function()
+  builtin.lsp_references({
+    initial_mode = 'normal'
+  })
+end, opts)
+
+vim.keymap.set('n', 'sf', function()
+  telescope.extensions.file_browser.file_browser({
+    path = '%:p:h',
+    cwd = Telescope_buffer_dir(),
+    previewer = false,
+  })
+end, opts)
