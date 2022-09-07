@@ -101,7 +101,9 @@ vim.keymap.set('n', ';h', function()
 end, opts)
 
 vim.keymap.set('n', ';;', function()
-  builtin.resume()
+  builtin.resume({
+    initial_mode = 'normal'
+  })
 end, opts)
 
 vim.keymap.set('n', ';e', function()
