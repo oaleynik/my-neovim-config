@@ -116,9 +116,9 @@ local colorbuddy = require('colorbuddy')
 local _, _, Group, groups, styles = colorbuddy.setup()
 
 vim.o.termguicolors = true
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
-colorbuddy.colorscheme('dayfox', vim.o.background == 'light')
+colorbuddy.colorscheme('kanagawa', vim.o.background == 'light')
 
 Group.new('CmpItemAbbr', groups.Comment)
 Group.new('CmpItemAbbrDeprecated', groups.Error)
