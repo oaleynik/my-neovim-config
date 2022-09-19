@@ -58,7 +58,8 @@ vim.o.backupdir = HOME .. '/.vim/tmp/backup//' -- backups
 vim.o.directory = '/.vim/tmp/swap//' -- swap files
 
 -- netrw
-vim.g.netrw_liststyle = 3
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Commands mode
 vim.o.wildmenu = true -- on TAB, complete options for system command
