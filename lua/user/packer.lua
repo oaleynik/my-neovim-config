@@ -46,6 +46,9 @@ require('packer').startup(function(use)
   -- Emmet
   use 'mattn/emmet-vim'
 
+  -- 'EditorConfig'
+  use 'editorconfig/editorconfig-vim'
+
   -- Themes
   use 'EdenEast/nightfox.nvim'
   use 'Konstantin8105/gomin'
