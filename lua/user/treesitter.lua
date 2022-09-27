@@ -64,4 +64,7 @@ configs.setup {
       },
     },
   },
+  playground = {
+    enable = true,
+  }
 }
