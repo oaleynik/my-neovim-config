@@ -50,6 +50,9 @@ require('packer').startup(function(use)
   -- 'EditorConfig'
   use 'editorconfig/editorconfig-vim'
 
+  -- Colorizer
+  use { 'norcalli/nvim-colorizer.lua', config = function () require('colorizer').setup { '*'; } end }
+
   -- Themes
   use 'EdenEast/nightfox.nvim'
   use 'Konstantin8105/gomin'
