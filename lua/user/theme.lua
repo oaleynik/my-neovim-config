@@ -1,5 +1,6 @@
 -- Theme
 vim.o.termguicolors = true
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
-vim.cmd [[colorscheme github_light]]
+vim.cmd [[colorscheme tokyonight]]
+
