@@ -235,3 +235,44 @@ lspconfig.volar.setup {
     new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
   end,
 }
+
+-- Rome.tools
+
+function os.capture(cmd, raw)
+  local handle = assert(io.popen(cmd, 'r'))
+  local output = assert(handle:read('*a'))
+
+  handle:close()
+
+  if raw then
+    return output
+  end
+
+  output = string.gsub(
+    string.gsub(
+      string.gsub(output, '^%s+', ''),
+      '%s+$',
+      ''
+    ),
+    '[\n\r]+',
+    ' '
+  )
+
+  return output
+end
+
+lspconfig.rome.setup {
+  cmd = { 'rome', 'start' },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  on_new_config = function(new_config, new_root_dir)
+    os.execute('rome stop')
+    os.execute('cd ' .. new_root_dir .. ' && rome start')
+    local rome_socket = os.capture('rome __print_socket', false)
+    local rome_bin_name = 'nc'
+    local rome_cmd = { rome_bin_name, '-U', rome_socket }
+
+    new_config.cmd = rome_cmd
+  end,
+}
+
