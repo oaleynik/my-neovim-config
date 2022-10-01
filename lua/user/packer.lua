@@ -69,6 +69,7 @@ require('packer').startup(function(use)
   use 'savq/melange'
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use { 'rose-pine/neovim', as = 'rose-pine' }
+  use { 'shaunsingh/oxocarbon.nvim', run = './install.sh' }
 end)
 
 return
