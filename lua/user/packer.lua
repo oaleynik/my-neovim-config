@@ -41,7 +41,6 @@ require('packer').startup(function(use)
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
-  use '/opt/homebrew/opt/fzf'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Emmet
