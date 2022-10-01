@@ -17,6 +17,10 @@ local function vmap(shortcut, command)
   map('v', shortcut, command)
 end
 
+local function xmap(shortcut, command)
+  map('x', shortcut, command)
+end
+
 -- local function cmap(shortcut, command)
 --   map('c', shortcut, command)
 -- end
@@ -38,6 +42,21 @@ vmap('/', '/\\v')
 -- Keep search matches in the middle of the window
 nmap('n', 'nzzzv')
 nmap('N', 'Nzzzv')
+
+-- Keep half-screen movements centered
+nmap('<C-d>', '<C-d>zz')
+nmap('<C-u>', '<C-u>zz')
+
+-- Paste in visual mode without replacing paste register
+xmap('<leader>p', '"_dP')
+
+-- Yank to system clipboard
+nmap('<leader>y', '"+y')
+vmap('<leader>y', '"+y')
+
+-- Delete without update of paste register
+nmap('<leader>d', '"_d')
+vmap('<leader>d', '"_d')
 
 -- Easy buffer navigation
 nmap('<C-h>', '<C-w>h')
