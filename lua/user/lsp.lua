@@ -118,7 +118,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'tsserver', 'html', 'cssls', 'jsonls' }
+local servers = { 'tsserver', 'html', 'cssls', 'jsonls', 'rust_analyzer', 'tailwindcss' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
