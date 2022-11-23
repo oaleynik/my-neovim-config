@@ -182,7 +182,7 @@ lspconfig.gopls.setup {
 
 function Goimports(timeoutms)
   local context = { source = { organizeImports = true } }
----@diagnostic disable-next-line: redundant-parameter
+  ---@diagnostic disable-next-line: redundant-parameter
   vim.validate { context = { context, 't', true } }
 
   local params = vim.lsp.util.make_range_params()
@@ -217,7 +217,8 @@ local lsputil = require('lspconfig.util')
 local function get_typescript_server_path(root_dir)
   local project_root = lsputil.find_node_modules_ancestor(root_dir)
 
-  local local_tsserverlib = project_root ~= nil and lsputil.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js')
+  local local_tsserverlib = project_root ~= nil and
+      lsputil.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js')
   local global_tsserverlib = os.getenv('NVIM_LSP_TSSERVER_PATH')
 
   if local_tsserverlib and lsputil.path.exists(local_tsserverlib) then
@@ -275,4 +276,3 @@ lspconfig.rome.setup {
     new_config.cmd = rome_cmd
   end,
 }
-
