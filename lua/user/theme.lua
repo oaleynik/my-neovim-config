@@ -2,5 +2,5 @@
 vim.o.termguicolors = true
 vim.o.background = 'dark'
 
-vim.cmd [[colorscheme carbonfox]]
+vim.cmd [[colorscheme github_dark_colorblind]]
 
