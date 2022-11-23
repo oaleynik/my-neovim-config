@@ -26,6 +26,9 @@ require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
   use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
+  -- Git
+  use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup {} end }
+
   -- LuaLine
   use 'nvim-lualine/lualine.nvim'
 
