@@ -1,3 +1,4 @@
 **/node_modules
 
 .luarc.json
+plugin/packer_compiled.lua
