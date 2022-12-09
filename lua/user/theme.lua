@@ -2,5 +2,5 @@
 vim.o.termguicolors = true
 vim.o.background = 'light'
 
-vim.cmd [[colorscheme github_light_default]]
+vim.cmd [[colorscheme tokyonight-storm]]
 
