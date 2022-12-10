@@ -1,6 +1,12 @@
+local status, packer = pcall(require, 'packer')
+if (not status) then
+  print("Packer is not installed")
+  return
+end
+
 vim.cmd [[packadd packer.nvim]]
 
-require('packer').startup(function(use)
+packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Essentials
@@ -38,8 +44,8 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/playground'
 
   -- Autopairs
-  use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end }
-  use { 'windwp/nvim-ts-autotag', config = function() require('nvim-ts-autotag').setup {} end }
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
@@ -53,7 +59,7 @@ require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
 
   -- Colorizer
-  use { 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup { '*'; } end }
+  use 'norcalli/nvim-colorizer.lua'
 
   -- Themes
   use 'EdenEast/nightfox.nvim'

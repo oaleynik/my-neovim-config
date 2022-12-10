@@ -1,9 +1,9 @@
-local status_ok, configs = pcall(require, 'nvim-treesitter.configs')
-if not status_ok then
+local status, ts = pcall(require, 'nvim-treesitter.configs')
+if not status then
 	return
 end
 
-configs.setup {
+ts.setup {
 	ensure_installed = 'all',
   ignore_install = { 'phpdoc' },
 	sync_install = false,

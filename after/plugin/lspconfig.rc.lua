@@ -1,5 +1,7 @@
+local status, lspconfig = pcall(require, 'lspconfig')
+if (not status) then return end
+
 local cmp = require('cmp')
-local lspconfig = require('lspconfig')
 local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 
