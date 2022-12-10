@@ -33,7 +33,7 @@ packer.startup(function(use)
   use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
   -- Git
-  use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup {} end }
+  use 'lewis6991/gitsigns.nvim'
 
   -- LuaLine
   use 'nvim-lualine/lualine.nvim'
