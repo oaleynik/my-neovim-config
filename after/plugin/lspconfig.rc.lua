@@ -73,7 +73,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -120,7 +119,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'tsserver', 'html', 'cssls', 'jsonls', 'rust_analyzer', 'tailwindcss' }
+local servers = { 'tsserver', 'html', 'cssls', 'jsonls', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -213,28 +212,3 @@ function Goimports(timeoutms)
   end
 end
 
--- Custom setup for vue LSP
-local lsputil = require('lspconfig.util')
-
-local function get_typescript_server_path(root_dir)
-  local project_root = lsputil.find_node_modules_ancestor(root_dir)
-
-  local local_tsserverlib = project_root ~= nil and
-      lsputil.path.join(project_root, 'node_modules', 'typescript', 'lib', 'tsserverlibrary.js')
-  local global_tsserverlib = os.getenv('NVIM_LSP_TSSERVER_PATH')
-
-  if local_tsserverlib and lsputil.path.exists(local_tsserverlib) then
-    return local_tsserverlib
-  else
-    return global_tsserverlib
-  end
-end
-
-lspconfig.volar.setup {
-  filetypes = { 'vue' },
-  on_attach = on_attach,
-  capabilities = capabilities,
-  on_new_config = function(new_config, new_root_dir)
-    new_config.init_options.typescript.serverPath = get_typescript_server_path(new_root_dir)
-  end,
-}
