@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["boo-colorscheme-nvim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/boo-colorscheme-nvim",
-    url = "https://github.com/rockerBOO/boo-colorscheme-nvim"
-  },
   catppuccin = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -143,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  gomin = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/gomin",
-    url = "https://github.com/Konstantin8105/gomin"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
@@ -224,10 +214,10 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedark.vim"] = {
+  onehalf = {
     loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/onedark.vim",
-    url = "https://github.com/joshdick/onedark.vim"
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/onehalf/vim",
+    url = "https://github.com/sonph/onehalf"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -254,11 +244,6 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
-  sobrio = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/sobrio",
-    url = "https://github.com/elvessousa/sobrio"
-  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -274,11 +259,6 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tender.vim"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/tender.vim",
-    url = "https://github.com/jacoborus/tender.vim"
-  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -288,16 +268,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
-  },
-  ["vim-atom-dark"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-atom-dark",
-    url = "https://github.com/gosukiwi/vim-atom-dark"
-  },
-  ["vim-colors-off"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-colors-off",
-    url = "https://github.com/pbrisbin/vim-colors-off"
   },
   ["vim-colors-pencil"] = {
     loaded = true,
@@ -332,6 +302,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/onehalf/vim"
+time([[Runtimepath customization]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

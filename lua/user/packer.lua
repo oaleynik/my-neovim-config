@@ -63,22 +63,16 @@ packer.startup(function(use)
 
   -- Themes
   use 'EdenEast/nightfox.nvim'
-  use 'Konstantin8105/gomin'
   use 'NLKNguyen/papercolor-theme'
-  use 'elvessousa/sobrio'
   use 'folke/tokyonight.nvim'
-  use 'gosukiwi/vim-atom-dark'
-  use 'jacoborus/tender.vim'
-  use 'joshdick/onedark.vim'
-  use 'pbrisbin/vim-colors-off'
   use 'preservim/vim-colors-pencil'
   use 'projekt0n/github-nvim-theme'
   use 'rebelot/kanagawa.nvim'
-  use 'rockerBOO/boo-colorscheme-nvim'
   use 'savq/melange'
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use { 'rose-pine/neovim', as = 'rose-pine' }
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
+  use { 'sonph/onehalf', rtp = 'vim' }
 end)
 
 return
