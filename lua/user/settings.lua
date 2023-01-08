@@ -14,6 +14,7 @@ vim.o.ttimeoutlen = 100
 vim.o.updatetime = 1000
 
 -- Display
+vim.o.termguicolors = true
 vim.o.showmatch = true -- show matching brackets
 vim.o.scrolloff = 7 -- always show 3 rows from edge of the screen
 vim.o.synmaxcol = 2000
