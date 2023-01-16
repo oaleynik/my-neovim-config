@@ -212,3 +212,15 @@ function Goimports(timeoutms)
   end
 end
 
+local FNM_MULTISHELL_PATH = os.getenv('FNM_MULTISHELL_PATH')
+local tslib_path = vim.fs.normalize(FNM_MULTISHELL_PATH .. '/lib/node_modules/typescript/lib')
+
+lspconfig.volar.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    typescript = {
+      tsdk = tslib_path,
+    },
+  },
+}
