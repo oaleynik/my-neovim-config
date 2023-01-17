@@ -32,6 +32,7 @@ packer.startup(function(use)
   use 'onsails/lspkind.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  use({ 'glepnir/lspsaga.nvim', branch = 'main' })
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
