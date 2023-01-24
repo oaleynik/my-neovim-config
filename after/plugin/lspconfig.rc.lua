@@ -86,20 +86,6 @@ local on_attach = function(client, bufnr)
   elseif client.server_capabilities.documentRangeFormattingProvider then
     buf_set_keymap('n', '<leader>ff', '<cmd>lua vim.lsp.buf.range_formatting()<CR>', opts)
   end
-
-  -- Set autocommands conditional on server_capabilities
-  if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=DarkMagenta guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=DarkMagenta guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=DarkMagenta guibg=LightYellow
-      augroup lsp_document_highlight
-      autocmd! * <buffer>
-      autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-      ]], false)
-  end
 end
 
 -- Enable the following language servers
