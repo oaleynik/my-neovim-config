@@ -75,6 +75,7 @@ packer.startup(function(use)
   use { 'rose-pine/neovim', as = 'rose-pine' }
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
   use { 'sonph/onehalf', rtp = 'vim' }
+  use 'jesseleite/nvim-noirbuddy'
 end)
 
 return
