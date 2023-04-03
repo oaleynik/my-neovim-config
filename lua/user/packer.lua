@@ -30,8 +30,8 @@ packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
   use 'onsails/lspkind.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  -- use 'jose-elias-alvarez/null-ls.nvim'
+  -- use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
   use({ 'glepnir/lspsaga.nvim', branch = 'main' })
 
   -- Git
