@@ -68,7 +68,7 @@ packer.startup(function(use)
   use 'NLKNguyen/papercolor-theme'
   use 'folke/tokyonight.nvim'
   use 'preservim/vim-colors-pencil'
-  use 'projekt0n/github-nvim-theme'
+  use { 'projekt0n/github-nvim-theme', tag='v0.0.7'}
   use 'rebelot/kanagawa.nvim'
   use 'savq/melange'
   use { 'catppuccin/nvim', as = 'catppuccin' }
@@ -76,6 +76,7 @@ packer.startup(function(use)
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
   use { 'sonph/onehalf', rtp = 'vim' }
   use 'jesseleite/nvim-noirbuddy'
+  use 'fenetikm/falcon'
 end)
 
 return
