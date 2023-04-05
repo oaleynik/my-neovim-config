@@ -77,6 +77,7 @@ packer.startup(function(use)
   use { 'sonph/onehalf', rtp = 'vim' }
   use 'jesseleite/nvim-noirbuddy'
   use 'fenetikm/falcon'
+  use 'sainnhe/gruvbox-material'
 end)
 
 return
