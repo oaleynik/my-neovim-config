@@ -92,6 +92,6 @@ vim.cmd([[
 
 -- LSP
 vim.cmd([[
-  autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+  autocmd BufWritePre *.go lua vim.lsp.buf.format({ async = true })
   autocmd BufWritePre *.go lua Goimports(1000)
 ]])
