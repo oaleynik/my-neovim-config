@@ -58,9 +58,6 @@ packer.startup(function(use)
   -- Emmet
   use 'mattn/emmet-vim'
 
-  -- 'EditorConfig'
-  use 'editorconfig/editorconfig-vim'
-
   -- Colorizer
   use 'norcalli/nvim-colorizer.lua'
 
