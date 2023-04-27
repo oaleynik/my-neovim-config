@@ -66,7 +66,7 @@ packer.startup(function(use)
   use 'NLKNguyen/papercolor-theme'
   use 'folke/tokyonight.nvim'
   use 'preservim/vim-colors-pencil'
-  use { 'projekt0n/github-nvim-theme', tag='v0.0.7'}
+  use { 'projekt0n/github-nvim-theme' }
   use 'rebelot/kanagawa.nvim'
   use 'savq/melange'
   use { 'catppuccin/nvim', as = 'catppuccin' }
