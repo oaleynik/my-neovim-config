@@ -1,10 +1,38 @@
--- Theme
-vim.g.gruvbox_material_background = 'soft' -- medium, hard
-vim.g.gruvbox_material_better_performance = 1
+vim.o.background = 'dark'
 
-vim.o.background = 'light'
-vim.cmd [[colorscheme github_light_high_contrast]]
 
+-- Melange
+-- vim.cmd [[colorscheme melange]]
+
+
+-- Tokyonight
+-- vim.cmd [[colorscheme tokyonight-storm]]
+
+
+-- Kanagawa
+-- vim.cmd [[colorscheme kanagawa-dragon]]
+
+
+-- Zenbones
+-- vim.cmd [[colorscheme zenwritten]]
+
+
+-- GitHub
+-- require('github-theme').setup {}
+-- vim.cmd [[colorscheme github_dark_high_contrast]]
+
+
+-- Gruvbox
+-- vim.g.gruvbox_material_background = 'soft' -- medium, hard
+-- vim.g.gruvbox_material_better_performance = 1
+-- vim.cmd [[colorscheme gruvbox-material]]
+
+
+-- Nightfox
+vim.cmd [[colorscheme carbonfox]]
+
+
+-- Noirbuddy
 -- require('noirbuddy').setup {
 --   -- preset = 'minimal',
 --   preset = 'miami-nights',
@@ -22,3 +50,4 @@ vim.cmd [[colorscheme github_light_high_contrast]]
 --     background = '#161616',
 --   },
 -- }
+-- vim.cmd [[colorscheme noirbuddy]]
