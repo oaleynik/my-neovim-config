@@ -21,7 +21,6 @@ packer.startup(function(use)
   use 'tpope/vim-unimpaired'
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -30,9 +29,12 @@ packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
   use 'onsails/lspkind.nvim'
+  use { 'glepnir/lspsaga.nvim', branch = 'main' }
+  use { 'williamboman/mason.nvim', run = ':MasonUpdate' }
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
   -- use 'jose-elias-alvarez/null-ls.nvim'
   -- use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
-  use({ 'glepnir/lspsaga.nvim', branch = 'main' })
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
