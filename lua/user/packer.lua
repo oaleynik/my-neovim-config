@@ -63,6 +63,9 @@ packer.startup(function(use)
   -- Colorizer
   use 'norcalli/nvim-colorizer.lua'
 
+  -- AI
+  use 'github/copilot.vim'
+
   -- Themes
   use 'EdenEast/nightfox.nvim'
   use 'NLKNguyen/papercolor-theme'
