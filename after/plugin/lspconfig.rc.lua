@@ -75,7 +75,13 @@ local on_attach = function(client, bufnr)
 end
 
 -- Enable the following language servers
-local servers = { 'tsserver', 'html', 'cssls', 'jsonls', 'rust_analyzer' }
+local servers = {
+  'tsserver',
+  'html',
+  'cssls',
+  'jsonls',
+  'rust_analyzer',
+}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
@@ -133,6 +139,7 @@ local tslib_path = vim.fs.normalize(FNM_MULTISHELL_PATH .. '/lib/node_modules/ty
 lspconfig.volar.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  filetypes = {'vue'},
   init_options = {
     typescript = {
       tsdk = tslib_path,
