@@ -81,6 +81,8 @@ packer.startup(function(use)
   use 'jesseleite/nvim-noirbuddy'
   use 'fenetikm/falcon'
   use 'sainnhe/gruvbox-material'
+  use 'sainnhe/everforest'
+  use 'arzg/vim-colors-xcode'
 end)
 
 return
