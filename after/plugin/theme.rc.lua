@@ -6,7 +6,7 @@ vim.o.background = 'dark'
 
 
 -- Tokyonight
--- vim.cmd [[colorscheme tokyonight-storm]]
+-- vim.cmd [[colorscheme tokyonight-moon]]
 
 
 -- Kanagawa
@@ -19,7 +19,7 @@ vim.o.background = 'dark'
 
 -- GitHub
 -- require('github-theme').setup {}
--- vim.cmd [[colorscheme github_dark_high_contrast]]
+-- vim.cmd [[colorscheme github_dark_dimmed]]
 
 
 -- Gruvbox
@@ -29,8 +29,17 @@ vim.o.background = 'dark'
 
 
 -- Nightfox
-vim.cmd [[colorscheme carbonfox]]
+-- vim.cmd [[colorscheme dayfox]]
 
+
+-- GitHub
+-- vim.g.everforest_background = 'hard'
+-- vim.g.everforest_better_performance = 1
+-- vim.cmd [[colorscheme everforest]]
+
+
+-- XCode
+vim.cmd [[colorscheme xcode]]
 
 -- Noirbuddy
 -- require('noirbuddy').setup {
