@@ -66,11 +66,14 @@ packer.startup(function(use)
   -- AI
   use 'github/copilot.vim'
 
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'leoluz/nvim-dap-go'
+
   -- Themes
   use 'EdenEast/nightfox.nvim'
-  use 'NLKNguyen/papercolor-theme'
   use 'folke/tokyonight.nvim'
-  use 'preservim/vim-colors-pencil'
   use { 'projekt0n/github-nvim-theme' }
   use 'rebelot/kanagawa.nvim'
   use 'savq/melange'
@@ -78,11 +81,10 @@ packer.startup(function(use)
   use { 'rose-pine/neovim', as = 'rose-pine' }
   use { 'mcchrish/zenbones.nvim', requires = 'rktjmp/lush.nvim' }
   use { 'sonph/onehalf', rtp = 'vim' }
-  use 'jesseleite/nvim-noirbuddy'
-  use 'fenetikm/falcon'
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/everforest'
-  use 'arzg/vim-colors-xcode'
+  use 'navarasu/onedark.nvim'
+  use 'dracula/vim'
 end)
 
 return

@@ -134,11 +134,6 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
-  falcon = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/falcon",
-    url = "https://github.com/fenetikm/falcon"
-  },
   ["github-nvim-theme"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
@@ -214,15 +209,25 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-go"] = {
+    loaded = true,
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
+    url = "https://github.com/leoluz/nvim-dap-go"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-noirbuddy"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-noirbuddy",
-    url = "https://github.com/jesseleite/nvim-noirbuddy"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -244,6 +249,11 @@ _G.packer_plugins = {
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   onehalf = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/onehalf/vim",
@@ -253,11 +263,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  ["papercolor-theme"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/papercolor-theme",
-    url = "https://github.com/NLKNguyen/papercolor-theme"
   },
   playground = {
     loaded = true,
@@ -293,11 +298,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-colors-pencil"] = {
-    loaded = true,
-    path = "/Users/oaleinyk/.local/share/nvim/site/pack/packer/start/vim-colors-pencil",
-    url = "https://github.com/preservim/vim-colors-pencil"
   },
   ["vim-commentary"] = {
     loaded = true,

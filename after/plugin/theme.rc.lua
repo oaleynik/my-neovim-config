@@ -1,4 +1,8 @@
-vim.o.background = 'dark'
+vim.o.background = 'light'
+
+
+-- Catppuccin
+-- vim.cmd [[colorscheme catppuccin-mocha]]
 
 
 -- Melange
@@ -14,7 +18,7 @@ vim.o.background = 'dark'
 
 
 -- Zenbones
--- vim.cmd [[colorscheme zenwritten]]
+-- vim.cmd [[colorscheme zenbones]]
 
 
 -- GitHub
@@ -23,23 +27,29 @@ vim.o.background = 'dark'
 
 
 -- Gruvbox
--- vim.g.gruvbox_material_background = 'soft' -- medium, hard
+-- vim.g.gruvbox_material_background = 'medium' -- medium, hard
 -- vim.g.gruvbox_material_better_performance = 1
 -- vim.cmd [[colorscheme gruvbox-material]]
 
 
 -- Nightfox
--- vim.cmd [[colorscheme dayfox]]
+-- vim.cmd [[colorscheme carbonfox]]
 
 
--- GitHub
+-- Everforest
 -- vim.g.everforest_background = 'hard'
 -- vim.g.everforest_better_performance = 1
 -- vim.cmd [[colorscheme everforest]]
 
 
--- XCode
-vim.cmd [[colorscheme xcode]]
+-- OneDark
+-- require('onedark').setup {}
+-- require('onedark').load()
+
+
+-- Dracula
+vim.cmd [[colorscheme dracula]]
+
 
 -- Noirbuddy
 -- require('noirbuddy').setup {
