@@ -16,7 +16,7 @@ vim.o.updatetime = 1000
 -- Display
 vim.o.termguicolors = true
 vim.o.showmatch = true -- show matching brackets
-vim.o.scrolloff = 7 -- always show 3 rows from edge of the screen
+vim.o.scrolloff = 25 -- always show 3 rows from edge of the screen
 vim.o.synmaxcol = 2000
 vim.o.laststatus = 3 -- always show status line
 
