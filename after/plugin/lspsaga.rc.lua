@@ -12,7 +12,7 @@ local keymap = vim.keymap.set
 
 keymap({ 'n', 't' }, '<A-d>', '<cmd>Lspsaga term_toggle<CR>')
 keymap({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>')
-keymap('n', 'gh', '<cmd>Lspsaga lsp_finder<CR>')
+keymap('n', 'gh', '<cmd>Lspsaga finder<CR>')
 keymap('n', 'gr', '<cmd>Lspsaga rename<CR>')
 keymap('n', 'gp', '<cmd>Lspsaga peek_definition<CR>')
 keymap('n', 'gd', '<cmd>Lspsaga goto_definition<CR>')
