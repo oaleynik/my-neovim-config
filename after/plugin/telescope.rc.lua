@@ -111,9 +111,7 @@ vim.keymap.set('n', ';e', function()
 end, opts)
 
 vim.keymap.set('n', ';w', function()
-  builtin.lsp_references({
-    initial_mode = 'normal'
-  })
+  builtin.grep_string()
 end, opts)
 
 vim.keymap.set('n', 'sf', function()
