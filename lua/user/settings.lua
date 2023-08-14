@@ -32,7 +32,7 @@ vim.o.showbreak = '↪' -- character to show when line is broken
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.numberwidth = 3
-vim.o.signcolumn = 'auto:3' -- keep 1 column for coc.vim check
+vim.o.signcolumn = 'auto:6' -- keep 1 column for coc.vim check
 vim.o.modelines = 0
 vim.o.showcmd = true -- display command in bottom bar
 
