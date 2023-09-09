@@ -68,6 +68,7 @@ packer.startup(function(use)
 
   -- AI
   use 'github/copilot.vim'
+  use { 'sourcegraph/sg.nvim', run = 'nvim -l build/init.lua' }
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
