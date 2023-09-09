@@ -143,5 +143,3 @@ lspconfig.volar.setup {
     },
   },
 }
-
--- lspconfig.rome.setup {}
