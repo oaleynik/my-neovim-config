@@ -10,7 +10,7 @@ vim.o.background = 'light'
 
 
 -- Tokyonight
--- vim.cmd [[colorscheme tokyonight-moon]]
+-- vim.cmd [[colorscheme tokyonight-night]]
 
 
 -- Kanagawa
@@ -22,8 +22,8 @@ vim.o.background = 'light'
 
 
 -- GitHub
--- require('github-theme').setup {}
--- vim.cmd [[colorscheme github_dark_dimmed]]
+require('github-theme').setup {}
+vim.cmd [[colorscheme github_light_high_contrast]]
 
 
 -- Gruvbox
