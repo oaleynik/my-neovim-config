@@ -136,7 +136,7 @@ local tslib_path = vim.fs.normalize(FNM_MULTISHELL_PATH .. '/lib/node_modules/ty
 lspconfig.volar.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {'vue'},
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
   init_options = {
     typescript = {
       tsdk = tslib_path,
