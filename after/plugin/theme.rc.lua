@@ -48,7 +48,11 @@ vim.o.background = 'light'
 
 
 -- Dracula
-vim.cmd [[colorscheme dracula]]
+-- vim.cmd [[colorscheme dracula]]
+
+
+-- Cobalt2
+-- require('colorbuddy').colorscheme('cobalt2')
 
 
 -- Noirbuddy

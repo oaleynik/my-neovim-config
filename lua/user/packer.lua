@@ -89,6 +89,7 @@ packer.startup(function(use)
   use 'sainnhe/everforest'
   use 'navarasu/onedark.nvim'
   use 'dracula/vim'
+  use 'lalitmee/cobalt2.nvim'
 end)
 
 return
