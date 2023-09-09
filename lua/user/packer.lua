@@ -15,10 +15,13 @@ packer.startup(function(use)
   use 'ryanoasis/vim-devicons'
   use 'tjdevries/colorbuddy.nvim'
   use 'tjdevries/cyclist.vim'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-surround'
   use 'tpope/vim-vinegar'
   use 'tpope/vim-unimpaired'
+
+  -- Comments
+  -- use 'tpope/vim-commentary'
+  use { 'numToStr/Comment.nvim' }
 
   -- LSP
   use 'hrsh7th/nvim-cmp'
