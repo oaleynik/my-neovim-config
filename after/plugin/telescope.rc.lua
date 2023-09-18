@@ -77,13 +77,17 @@ vim.keymap.set('n', 'ff', function()
 end, opts)
 
 vim.keymap.set('n', ';r', function()
-  builtin.live_grep()
+  builtin.live_grep({
+    additional_args = function()
+      return { '-g', '!**/vendor/**' }
+    end,
+  })
 end, opts)
 
 vim.keymap.set('n', ';R', function()
   builtin.live_grep({
     additional_args = function()
-      return { '-uu' }
+      return { '-uu', '-g', '!.git' }
     end,
   })
 end, opts)
