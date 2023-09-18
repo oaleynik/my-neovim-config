@@ -73,7 +73,7 @@ end
 
 -- Enable the following language servers
 local servers = {
-  'tsserver',
+  -- 'tsserver',
   'html',
   'cssls',
   'jsonls',
