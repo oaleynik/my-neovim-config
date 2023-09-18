@@ -1,4 +1,4 @@
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
 
 -- Catppuccin
@@ -10,20 +10,20 @@ vim.o.background = 'light'
 
 
 -- Tokyonight
--- vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 
 -- Kanagawa
--- vim.cmd [[colorscheme kanagawa-dragon]]
+-- vim.cmd [[colorscheme kanagawa-wave]]
 
 
 -- Zenbones
--- vim.cmd [[colorscheme zenbones]]
+-- vim.cmd [[colorscheme zenwritten]]
 
 
 -- GitHub
-require('github-theme').setup {}
-vim.cmd [[colorscheme github_light_high_contrast]]
+-- require('github-theme').setup {}
+-- vim.cmd [[colorscheme github_light_high_contrast]]
 
 
 -- Gruvbox
