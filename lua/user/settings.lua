@@ -23,8 +23,8 @@ vim.o.laststatus = 3 -- always show status line
 
 vim.o.list = false
 vim.o.foldenable = false
-vim.o.foldlevel = 4 -- limit folding to 4 levels
-vim.o.foldmethod = 'syntax' -- use language syntax to generate folds
+vim.o.foldlevel = 10 -- limit folding to 4 levels
+vim.o.foldmethod = 'manual' -- use language syntax to generate folds
 vim.o.wrap = false
 vim.o.eol = false -- show if there is no eol char
 vim.o.showbreak = '↪' -- character to show when line is broken
