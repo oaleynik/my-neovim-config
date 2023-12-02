@@ -10,7 +10,7 @@ vim.o.background = 'dark'
 
 
 -- Tokyonight
-vim.cmd [[colorscheme tokyonight-night]]
+-- vim.cmd [[colorscheme tokyonight-night]]
 
 
 -- Kanagawa
@@ -23,13 +23,13 @@ vim.cmd [[colorscheme tokyonight-night]]
 
 -- GitHub
 -- require('github-theme').setup {}
--- vim.cmd [[colorscheme github_light_high_contrast]]
+-- vim.cmd [[colorscheme github_light]]
 
 
 -- Gruvbox
--- vim.g.gruvbox_material_background = 'medium' -- medium, hard
--- vim.g.gruvbox_material_better_performance = 1
--- vim.cmd [[colorscheme gruvbox-material]]
+vim.g.gruvbox_material_background = 'hard' -- medium, hard
+vim.g.gruvbox_material_better_performance = 1
+vim.cmd [[colorscheme gruvbox-material]]
 
 
 -- Nightfox
