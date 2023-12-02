@@ -36,6 +36,7 @@ packer.startup(function(use)
   use { 'williamboman/mason.nvim', run = ':MasonUpdate' }
   use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
+  use 'folke/trouble.nvim'
   -- use 'jose-elias-alvarez/null-ls.nvim'
   -- use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
