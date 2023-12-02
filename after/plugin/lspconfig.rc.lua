@@ -131,15 +131,33 @@ lspconfig.gopls.setup {
 }
 
 local FNM_MULTISHELL_PATH = os.getenv('FNM_MULTISHELL_PATH')
-local tslib_path = vim.fs.normalize(FNM_MULTISHELL_PATH .. '/lib/node_modules/typescript/lib')
+
+local function get_typescript_server_path(root_dir)
+  local global_ts = vim.fs.normalize(FNM_MULTISHELL_PATH .. '/lib/node_modules/typescript/lib')
+
+  local found_ts = ''
+
+  local function check_dir(path)
+    found_ts =  lspconfig.util.path.join(path, 'node_modules', 'typescript', 'lib')
+
+    if lspconfig.util.path.exists(found_ts) then
+      return path
+    end
+  end
+
+  if lspconfig.util.search_ancestors(root_dir, check_dir) then
+    return found_ts
+  else
+    return global_ts
+  end
+end
 
 lspconfig.volar.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-  init_options = {
-    typescript = {
-      tsdk = tslib_path,
-    },
-  },
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}, -- takeover mode
+  -- filetypes = {'vue'},
+  on_new_config = function(new_config, new_root_dir)
+    new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+  end,
 }
