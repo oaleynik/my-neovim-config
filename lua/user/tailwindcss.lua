@@ -52,6 +52,8 @@ local function groupClasses(classString)
   local groupedByPrefix = {}
   local previousPrefix = nil
 
+  table.sort(classNames)
+
   for i, className in ipairs(classNames) do
     local prefix = getClassPrefix(className)
 
@@ -69,6 +71,16 @@ local function groupClasses(classString)
   end
 
   return formattedClasses
+end
+
+local function get_visual_selection_range()
+    local start_pos = vim.api.nvim_buf_get_mark(0, '<')
+    local end_pos = vim.api.nvim_buf_get_mark(0, '>')
+
+    start_pos[1] = start_pos[1] - 1
+    end_pos[1] = end_pos[1] - 1
+
+    return start_pos, end_pos
 end
 
 local M = {}
