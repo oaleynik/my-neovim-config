@@ -74,6 +74,7 @@ end
 -- Enable the following language servers
 local servers = {
   -- 'tsserver',
+  -- 'biome',
   'html',
   'cssls',
   'jsonls',
