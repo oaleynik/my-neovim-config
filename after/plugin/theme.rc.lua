@@ -2,7 +2,7 @@ vim.o.background = 'dark'
 
 
 -- Catppuccin
--- vim.cmd [[colorscheme catppuccin-mocha]]
+-- vim.cmd [[colorscheme catppuccin-latte]]
 
 
 -- Melange
@@ -10,30 +10,30 @@ vim.o.background = 'dark'
 
 
 -- Tokyonight
--- vim.cmd [[colorscheme tokyonight-night]]
+-- vim.cmd [[colorscheme tokyonight-day]]
 
 
 -- Kanagawa
--- vim.cmd [[colorscheme kanagawa-wave]]
+-- vim.cmd [[colorscheme kanagawa-lotus]]
 
 
 -- Zenbones
--- vim.cmd [[colorscheme zenwritten]]
+-- vim.cmd [[colorscheme vimbones]]
 
 
 -- GitHub
--- require('github-theme').setup {}
--- vim.cmd [[colorscheme github_light]]
+require('github-theme').setup {}
+vim.cmd [[colorscheme github_dark_dimmed]]
 
 
 -- Gruvbox
-vim.g.gruvbox_material_background = 'hard' -- medium, hard
-vim.g.gruvbox_material_better_performance = 1
-vim.cmd [[colorscheme gruvbox-material]]
+-- vim.g.gruvbox_material_background = 'hard' -- medium, hard
+-- vim.g.gruvbox_material_better_performance = 1
+-- vim.cmd [[colorscheme gruvbox-material]]
 
 
 -- Nightfox
--- vim.cmd [[colorscheme carbonfox]]
+-- vim.cmd [[colorscheme dayfox]]
 
 
 -- Everforest
