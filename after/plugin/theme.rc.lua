@@ -1,5 +1,12 @@
 vim.o.background = 'dark'
 
+require('rose-pine').setup({
+  variant = 'moon', -- auto, main, moon, or dawn
+  styles = {
+    italic = false,
+  },
+})
+vim.cmd [[colorscheme rose-pine]]
 
 -- Catppuccin
 -- vim.cmd [[colorscheme catppuccin-latte]]
@@ -22,8 +29,8 @@ vim.o.background = 'dark'
 
 
 -- GitHub
-require('github-theme').setup {}
-vim.cmd [[colorscheme github_dark_dimmed]]
+-- require('github-theme').setup {}
+-- vim.cmd [[colorscheme github_dark_dimmed]]
 
 
 -- Gruvbox
