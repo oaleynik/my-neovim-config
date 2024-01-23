@@ -13,7 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require('oaleinyk.settings')
 require('oaleinyk.keymap')
-require('lazy').setup('oaleinyk.lazy')
+require('lazy').setup({
+  spec = 'oaleinyk.lazy',
+
+  change_detection = {
+    notify = false,
+  },
+})
 
 vim.o.background = 'dark'
 
