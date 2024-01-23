@@ -35,25 +35,6 @@ return {
     local lspconfig = require('lspconfig')
     local cmplsp = require('cmp_nvim_lsp')
 
-    local function get_typescript_server_path(root_dir)
-      local global_ts = vim.fs.normalize(os.getenv('FNM_MULTISHELL_PATH') .. '/lib/node_modules/typescript/lib')
-      local found_ts = ''
-
-      local function check_dir(path)
-        found_ts =  lspconfig.util.path.join(path, 'node_modules', 'typescript', 'lib')
-
-        if lspconfig.util.path.exists(found_ts) then
-          return path
-        end
-      end
-
-      if lspconfig.util.search_ancestors(root_dir, check_dir) then
-        return found_ts
-      else
-        return global_ts
-      end
-    end
-
     require('mason-lspconfig').setup({
       ensure_installed = {
         'biome',
@@ -93,15 +74,6 @@ return {
             },
           })
         end,
-
-        -- ['volar'] = function()
-        --   lspconfig['volar'].setup({
-        --     capabilities = cmplsp.default_capabilities(),
-        --     on_new_config = function(new_config, new_root_dir)
-        --       new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-        --     end,
-        --   })
-        -- end,
       },
     })
 
