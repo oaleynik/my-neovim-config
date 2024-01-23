@@ -21,14 +21,6 @@ local function xmap(shortcut, command)
   map('x', shortcut, command)
 end
 
--- local function cmap(shortcut, command)
---   map('c', shortcut, command)
--- end
-
--- local function tmap(shortcut, command)
---   map('t', shortcut, command)
--- end
-
 map('', '<Space>', '<Nop>')
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -67,6 +59,10 @@ nmap('<C-l>', '<C-w>l')
 -- Reselect visual block after indent/outdent
 vmap('<', '<gv')
 vmap('>', '>gv')
+
+-- Easily move lines in visual mode
+vmap('J', ":m '>+1<CR>gv=gv")
+vmap('K', ":m '<-2<CR>gv=gv")
 
 -- Easy window split
 nmap('vv', '<C-w>v')
