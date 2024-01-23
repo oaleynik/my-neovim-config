@@ -26,7 +26,7 @@ return {
     build = 'nvim -l build/init.lua',
 
     config = function ()
-      require('sg').setup()
+      require('sg').setup({})
     end
   },
 
