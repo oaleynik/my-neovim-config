@@ -23,8 +23,6 @@ return {
   {
     'sourcegraph/sg.nvim',
 
-    build = 'nvim -l build/init.lua',
-
     config = function ()
       require('sg').setup({})
     end
