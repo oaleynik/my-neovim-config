@@ -1,6 +1,12 @@
 return {
   'mfussenegger/nvim-dap',
 
+  lazy = true,
+
+  keys = {
+    { '<F5>', function() require('dap').continue() end, desc = 'DAP' },
+  },
+
   dependencies = {
     'rcarriga/nvim-dap-ui',
     'leoluz/nvim-dap-go',
