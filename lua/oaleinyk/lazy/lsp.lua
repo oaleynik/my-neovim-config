@@ -185,8 +185,7 @@ return {
           vim.lsp.buf.format({ async = true })
         end, opts)
 
-        vim.keymap.set({ 'n', 'v' }, '<leader>sca', '<cmd>Lspsaga code_action<CR>', opts)
-
+        vim.keymap.set({ 'n', 'v' }, '<leader>sa', '<cmd>Lspsaga code_action<CR>', opts)
         vim.keymap.set('n', '<leader>sp', '<cmd>Lspsaga peek_definition<CR>', opts)
         vim.keymap.set('n', '<leader>stp', '<cmd>Lspsaga peek_type_definition<CR>', opts)
         vim.keymap.set('n', '<leader>sg', '<cmd>Lspsaga goto_definition<CR>', opts)
