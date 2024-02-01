@@ -23,6 +23,7 @@ return {
         'javascript',
         'lua',
         'markdown',
+        'markdown_inline',
         'nix',
         'rust',
         'scss',
