@@ -59,7 +59,8 @@ return {
   {
     'projekt0n/github-nvim-theme',
 
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     config = function ()
       require('github-theme').setup()
     end
@@ -68,10 +69,9 @@ return {
   {
     'sainnhe/gruvbox-material',
 
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     config = function ()
-      vim.g.gruvbox_material_background = 'hard' -- medium, hard
+      vim.g.gruvbox_material_background = 'soft' -- medium, hard
       vim.g.gruvbox_material_better_performance = 1
     end
   },
