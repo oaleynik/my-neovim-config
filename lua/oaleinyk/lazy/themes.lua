@@ -28,10 +28,11 @@ return {
     'rose-pine/neovim',
 
     name = 'rose-pine',
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     config = function ()
       require('rose-pine').setup({
-        variant = 'moon', -- auto, main, moon, or dawn
+        variant = 'auto', -- auto, main, moon, or dawn
         styles = {
           italic = false,
         },
@@ -49,8 +50,8 @@ return {
   {
     'mcchrish/zenbones.nvim',
 
-    lazy = true,
     name = 'zenbones',
+    lazy = true,
     dependencies = {
       'rktjmp/lush.nvim'
     },
@@ -59,8 +60,7 @@ return {
   {
     'projekt0n/github-nvim-theme',
 
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     config = function ()
       require('github-theme').setup()
     end
@@ -71,7 +71,7 @@ return {
 
     lazy = true,
     config = function ()
-      vim.g.gruvbox_material_background = 'soft' -- medium, hard
+      vim.g.gruvbox_material_background = 'hard' -- medium, hard
       vim.g.gruvbox_material_better_performance = 1
     end
   },
