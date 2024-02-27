@@ -32,7 +32,9 @@ return {
         'vimdoc',
         'vue',
       },
+      ignore_install = {},
       auto_install = true,
+      sync_install = false,
       autopath = {
         enable = true,
       },
@@ -51,6 +53,13 @@ return {
       textobjects = {
         select = {
           enable = true,
+          lookahead = true,
+          keymaps = {
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+          },
         },
         swap = {
           enable = true,
