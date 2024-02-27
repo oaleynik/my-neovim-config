@@ -2,12 +2,25 @@ return {
   'nvim-lua/plenary.nvim',
   'mattn/emmet-vim',
   'tpope/vim-fugitive',
-  'github/copilot.vim',
   'ryanoasis/vim-devicons',
   'tjdevries/colorbuddy.nvim',
   'tpope/vim-surround',
   'tpope/vim-vinegar',
   'tpope/vim-unimpaired',
+
+  {
+    'github/copilot.vim',
+
+    config = function ()
+      local opts = {
+        silent = true,
+        noremap = true,
+      }
+
+      vim.keymap.set('i', '<C-]>', '<Plug>(copilot-next)', opts)
+      vim.keymap.set('i', '<C-[>', '<Plug>(copilot-previous)', opts)
+    end
+  },
 
   {
     'folke/todo-comments.nvim',
