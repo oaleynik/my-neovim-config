@@ -32,7 +32,7 @@ return {
     priority = 1000,
     config = function ()
       require('rose-pine').setup({
-        variant = 'auto', -- auto, main, moon, or dawn
+        variant = 'moon', -- auto, main, moon, or dawn
         styles = {
           italic = false,
         },
