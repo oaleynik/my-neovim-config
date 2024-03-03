@@ -84,6 +84,7 @@ return {
                 },
                 staticcheck = true,
                 experimentalPostfixCompletions = true,
+                gofumpt = true,
               },
             },
           })
