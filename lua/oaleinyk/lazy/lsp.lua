@@ -57,20 +57,6 @@ return {
           })
         end,
 
-        ['volar'] = function()
-          lspconfig['volar'].setup({
-            capabilities = cmplsp.default_capabilities(),
-            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-          })
-        end,
-
-        ['tsserver'] = function()
-          lspconfig['tsserver'].setup({
-            autostart = false,
-            capabilities = cmplsp.default_capabilities(),
-          })
-        end,
-
         ['gopls'] = function()
           lspconfig['gopls'].setup({
             capabilities = cmplsp.default_capabilities(),
