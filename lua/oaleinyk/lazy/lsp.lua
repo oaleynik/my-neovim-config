@@ -57,6 +57,30 @@ return {
           })
         end,
 
+        ['tsserver'] = function()
+          lspconfig['tsserver'].setup({
+            capabilities = cmplsp.default_capabilities(),
+            init_options = {
+              plugins = {
+                {
+                  name = "@vue/typescript-plugin",
+                  location = "",
+                  languages = {"vue"},
+                },
+              },
+            },
+            filetypes = {
+              "javascript",
+              "javascriptreact",
+              "javascript.jsx",
+              "typescript",
+              "typescriptreact",
+              "typescript.tsx",
+              "vue",
+            },
+          })
+        end,
+
         ['gopls'] = function()
           lspconfig['gopls'].setup({
             capabilities = cmplsp.default_capabilities(),
