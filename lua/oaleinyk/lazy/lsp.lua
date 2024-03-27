@@ -45,7 +45,7 @@ return {
         'rust_analyzer',
         'tailwindcss',
         'tsserver',
-        'volar',
+        'volar@1.8.27',
         'zls',
         'yamlls',
       },
@@ -57,29 +57,43 @@ return {
           })
         end,
 
-        ['tsserver'] = function()
-          lspconfig['tsserver'].setup({
+        ['volar'] = function()
+          lspconfig['volar'].setup({
             capabilities = cmplsp.default_capabilities(),
-            init_options = {
-              plugins = {
-                {
-                  name = "@vue/typescript-plugin",
-                  location = "",
-                  languages = {"vue"},
-                },
-              },
-            },
-            filetypes = {
-              "javascript",
-              "javascriptreact",
-              "javascript.jsx",
-              "typescript",
-              "typescriptreact",
-              "typescript.tsx",
-              "vue",
-            },
+            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
           })
         end,
+
+        ['tsserver'] = function()
+          lspconfig['tsserver'].setup({
+            autostart = false,
+            capabilities = cmplsp.default_capabilities(),
+          })
+        end,
+
+        -- ['tsserver'] = function()
+        --   lspconfig['tsserver'].setup({
+        --     capabilities = cmplsp.default_capabilities(),
+        --     init_options = {
+        --       plugins = {
+        --         {
+        --           name = "@vue/typescript-plugin",
+        --           location = "",
+        --           languages = {"vue"},
+        --         },
+        --       },
+        --     },
+        --     filetypes = {
+        --       "javascript",
+        --       "javascriptreact",
+        --       "javascript.jsx",
+        --       "typescript",
+        --       "typescriptreact",
+        --       "typescript.tsx",
+        --       "vue",
+        --     },
+        --   })
+        -- end,
 
         ['gopls'] = function()
           lspconfig['gopls'].setup({
