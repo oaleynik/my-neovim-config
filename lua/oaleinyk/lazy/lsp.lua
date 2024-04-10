@@ -16,15 +16,8 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'L3MON4D3/LuaSnip',
     'onsails/lspkind.nvim',
-
-    {
-      'nvimdev/lspsaga.nvim',
-
-      dependencies = {
-        'nvim-treesitter/nvim-treesitter',
-        'nvim-tree/nvim-web-devicons',
-      },
-    },
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-tree/nvim-web-devicons',
   },
 
   config = function()
@@ -175,26 +168,22 @@ return {
           menu = {
             buffer = '[buf]',
             nvim_lsp = '[LSP]',
-            nvim_lua = '[api]',
             path = '[path]',
+            nvim_lua = '[api]',
             luasnip = '[snip]',
           },
         }),
       },
     })
 
-    local lspsaga = require('lspsaga')
-
-    lspsaga.setup({
-      lightbulb = {
-        sign = false,
-        debounce = 100,
-      },
-    })
-
     vim.diagnostic.config({
       virtual_text = false,
     })
+
+    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+    vim.keymap.set('n', '[e', vim.diagnostic.goto_prev)
+    vim.keymap.set('n', ']e', vim.diagnostic.goto_next)
+    vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -205,37 +194,19 @@ return {
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf }
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+        vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+        vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
-        vim.keymap.set('n', '<space>ff', function()
+        vim.keymap.set('n', '<leader>ff', function()
           vim.lsp.buf.format({ async = true })
         end, opts)
-
-        vim.keymap.set({ 'n', 'v' }, '<leader>sa', '<cmd>Lspsaga code_action<CR>', opts)
-        vim.keymap.set('n', '<leader>sp', '<cmd>Lspsaga peek_definition<CR>', opts)
-        vim.keymap.set('n', '<leader>stp', '<cmd>Lspsaga peek_type_definition<CR>', opts)
-        vim.keymap.set('n', '<leader>sg', '<cmd>Lspsaga goto_definition<CR>', opts)
-        vim.keymap.set('n', '<leader>stg', '<cmd>Lspsaga goto_type_definition<CR>', opts)
-        vim.keymap.set('n', '<leader>sf', '<cmd>Lspsaga finder<CR>', opts)
-        vim.keymap.set('n', '<leader>sr', '<cmd>Lspsaga rename<CR>', opts)
-        vim.keymap.set('n', '<leader>sl', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
-        vim.keymap.set('n', '<leader>sb', '<cmd>Lspsaga show_buf_diagnostics<CR>', opts)
-        vim.keymap.set('n', '<leader>so', '<cmd>Lspsaga outline<CR>', opts)
-        vim.keymap.set('n', '<Leader>sci', '<cmd>Lspsaga incoming_calls<CR>', opts)
-        vim.keymap.set('n', '<Leader>sco', '<cmd>Lspsaga outgoing_calls<CR>', opts)
-        vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', opts)
-
-        vim.keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
-        vim.keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-
-        vim.keymap.set('n', '[e', function()
-          require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-        end, opts)
-
-        vim.keymap.set('n', ']e', function()
-          require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
-        end, opts)
-
-        vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
       end,
     })
 
