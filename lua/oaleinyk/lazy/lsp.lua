@@ -28,6 +28,11 @@ return {
     local lspconfig = require('lspconfig')
     local cmplsp = require('cmp_nvim_lsp')
 
+    local lsp_handlers = {
+      ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
+      ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
+    }
+
     require('mason-lspconfig').setup({
       ensure_installed = {
         'biome',
@@ -47,13 +52,15 @@ return {
         function(server_name)
           lspconfig[server_name].setup({
             capabilities = cmplsp.default_capabilities(),
+            handlers = lsp_handlers,
           })
         end,
 
         ['volar'] = function()
           lspconfig['volar'].setup({
             capabilities = cmplsp.default_capabilities(),
-            filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+            handlers = lsp_handlers,
           })
         end,
 
@@ -61,6 +68,7 @@ return {
           lspconfig['tsserver'].setup({
             autostart = false,
             capabilities = cmplsp.default_capabilities(),
+            handlers = lsp_handlers,
           })
         end,
 
@@ -104,6 +112,7 @@ return {
                 gofumpt = true,
               },
             },
+            handlers = lsp_handlers,
           })
         end,
       },
