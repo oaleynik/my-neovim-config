@@ -222,7 +222,7 @@ return {
       pattern = '*.go',
       callback = function()
         local params = vim.lsp.util.make_range_params()
-        params.context = {only = {"source.organizeImports"}}
+        params.context = { only = { "source.organizeImports" } }
 
         local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
 
@@ -235,7 +235,7 @@ return {
           end
         end
 
-        vim.lsp.buf.format({async = false})
+        vim.lsp.buf.format({ async = false })
       end,
     })
   end
