@@ -6,8 +6,7 @@ return {
 
   {
     'EdenEast/nightfox.nvim',
-    lazy = false,
-    priority = 1000,
+    lazy = true,
   },
 
   {
@@ -29,10 +28,11 @@ return {
     'rose-pine/neovim',
 
     name = 'rose-pine',
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     config = function ()
       require('rose-pine').setup({
-        variant = 'dawn', -- auto, main, moon, or dawn
+        variant = 'auto', -- auto, main, moon, or dawn
         styles = {
           italic = false,
         },
