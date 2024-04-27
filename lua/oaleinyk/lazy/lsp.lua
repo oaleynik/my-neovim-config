@@ -27,6 +27,8 @@ return {
 
     local lspconfig = require('lspconfig')
     local cmplsp = require('cmp_nvim_lsp')
+    local mason_registry = require('mason-registry')
+    local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
 
     local lsp_handlers = {
       ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
@@ -43,7 +45,7 @@ return {
         'rust_analyzer',
         'tailwindcss',
         'tsserver',
-        'volar@1.8.27',
+        'volar',
         'zls',
         'yamlls',
       },
@@ -59,42 +61,30 @@ return {
         ['volar'] = function()
           lspconfig['volar'].setup({
             capabilities = cmplsp.default_capabilities(),
-            filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+            init_options = {
+              vue = {
+                hybridMode = false,
+              },
+            },
             handlers = lsp_handlers,
           })
         end,
 
         ['tsserver'] = function()
           lspconfig['tsserver'].setup({
-            autostart = false,
+            init_options = {
+              plugins = {
+                {
+                  name = '@vue/typescript-plugin',
+                  location = vue_language_server_path,
+                  languages = { 'vue' },
+                },
+              },
+            },
             capabilities = cmplsp.default_capabilities(),
             handlers = lsp_handlers,
           })
         end,
-
-        -- ['tsserver'] = function()
-        --   lspconfig['tsserver'].setup({
-        --     capabilities = cmplsp.default_capabilities(),
-        --     init_options = {
-        --       plugins = {
-        --         {
-        --           name = "@vue/typescript-plugin",
-        --           location = "",
-        --           languages = {"vue"},
-        --         },
-        --       },
-        --     },
-        --     filetypes = {
-        --       "javascript",
-        --       "javascriptreact",
-        --       "javascript.jsx",
-        --       "typescript",
-        --       "typescriptreact",
-        --       "typescript.tsx",
-        --       "vue",
-        --     },
-        --   })
-        -- end,
 
         ['gopls'] = function()
           lspconfig['gopls'].setup({
