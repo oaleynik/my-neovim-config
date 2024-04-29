@@ -40,13 +40,9 @@ return {
 			ensure_installed = {
 				"biome",
 				"cssls",
-				"gofumpt",
-				"goimports-reviser",
 				"gopls",
 				"html",
 				"lua_ls",
-				"prettier",
-				"prettierd",
 				"rust_analyzer",
 				"tailwindcss",
 				"tsserver",
