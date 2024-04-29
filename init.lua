@@ -1,1 +1,1 @@
-require('oaleinyk')
+require("oaleinyk")

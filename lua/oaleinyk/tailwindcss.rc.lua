@@ -1,1 +1,1 @@
-require('user.tailwindcss').setup()
+require("user.tailwindcss").setup()
