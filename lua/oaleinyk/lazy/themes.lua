@@ -28,8 +28,7 @@ return {
     'rose-pine/neovim',
 
     name = 'rose-pine',
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     config = function ()
       require('rose-pine').setup({
         variant = 'auto', -- auto, main, moon, or dawn
@@ -69,7 +68,8 @@ return {
   {
     'sainnhe/gruvbox-material',
 
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     config = function ()
       vim.g.gruvbox_material_background = 'hard' -- medium, hard
       vim.g.gruvbox_material_better_performance = 1
