@@ -21,12 +21,12 @@ require("lazy").setup({
 	},
 })
 
-vim.o.background = "dark"
+vim.o.background = "light"
 
-vim.cmd("colorscheme tokyonight-night")
--- vim.cmd("colorscheme gruvbox-material")
+vim.cmd('colorscheme dawnfox')
 -- vim.cmd('colorscheme rose-pine')
--- vim.cmd('colorscheme carbonfox')
+-- vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("colorscheme gruvbox-material")
 -- vim.cmd('colorscheme github_dark_default')
 -- vim.cmd('colorscheme catppuccin-latte')
 -- vim.cmd('colorscheme melange')
