@@ -21,9 +21,9 @@ require("lazy").setup({
 	},
 })
 
-vim.o.background = "light"
+vim.o.background = "dark"
 
-vim.cmd('colorscheme dawnfox')
+vim.cmd('colorscheme carbonfox')
 -- vim.cmd('colorscheme rose-pine')
 -- vim.cmd("colorscheme tokyonight-night")
 -- vim.cmd("colorscheme gruvbox-material")
