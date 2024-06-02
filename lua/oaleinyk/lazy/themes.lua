@@ -6,8 +6,7 @@ return {
 
 	{
 		"EdenEast/nightfox.nvim",
-		lazy = false,
-    priority = 1000,
+		lazy = true,
 	},
 
 	{
@@ -79,7 +78,8 @@ return {
 	{
 		"sainnhe/everforest",
 
-		lazy = true,
+		lazy = false,
+    priority = 1000,
 		config = function()
 			vim.g.everforest_background = "hard"
 			vim.g.everforest_better_performance = 1
