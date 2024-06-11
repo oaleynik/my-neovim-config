@@ -1,7 +1,8 @@
 return {
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
+    priority = 1000,
 	},
 
 	{
@@ -78,8 +79,7 @@ return {
 	{
 		"sainnhe/everforest",
 
-		lazy = false,
-    priority = 1000,
+		lazy = true,
 		config = function()
 			vim.g.everforest_background = "hard"
 			vim.g.everforest_better_performance = 1
