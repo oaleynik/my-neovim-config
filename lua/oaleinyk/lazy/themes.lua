@@ -28,7 +28,8 @@ return {
 		"rose-pine/neovim",
 
 		name = "rose-pine",
-		lazy = true,
+		lazy = false,
+    priority = 1000,
 		config = function()
 			require("rose-pine").setup({
 				variant = "auto", -- auto, main, moon, or dawn
@@ -78,8 +79,7 @@ return {
 	{
 		"sainnhe/everforest",
 
-		lazy = false,
-    priority = 1000,
+		lazy = true,
 		config = function()
 			vim.g.everforest_background = "hard"
 			vim.g.everforest_better_performance = 1
