@@ -28,8 +28,7 @@ return {
 		"rose-pine/neovim",
 
 		name = "rose-pine",
-		lazy = false,
-    priority = 1000,
+		lazy = true,
 		config = function()
 			require("rose-pine").setup({
 				variant = "auto", -- auto, main, moon, or dawn
@@ -60,7 +59,8 @@ return {
 	{
 		"projekt0n/github-nvim-theme",
 
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("github-theme").setup()
 		end,
