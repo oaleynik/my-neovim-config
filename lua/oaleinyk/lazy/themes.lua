@@ -1,5 +1,13 @@
 return {
 	{
+		"oxfist/night-owl.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("night-owl").setup()
+		end,
+	},
+	{
 		"folke/tokyonight.nvim",
 		lazy = true,
 	},
@@ -59,8 +67,7 @@ return {
 	{
 		"projekt0n/github-nvim-theme",
 
-		lazy = false,
-    priority = 1000,
+		lazy = true,
 		config = function()
 			require("github-theme").setup()
 		end,
