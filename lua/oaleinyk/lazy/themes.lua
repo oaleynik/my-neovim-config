@@ -32,14 +32,18 @@ return {
 	},
 
 	{
-		"rose-pine/neovim",
+		"nyoom-engineering/oxocarbon.nvim",
+		lazy = true,
+	},
 
+	{
+		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
-		priority = 1000,
+    priority = 1000,
 		config = function()
 			require("rose-pine").setup({
-				variant = "dawn", -- auto, main, moon, or dawn
+				variant = "moon", -- auto, main, moon, or dawn
 				styles = {
 					italic = false,
 				},
@@ -49,14 +53,12 @@ return {
 
 	{
 		"catppuccin/nvim",
-
 		lazy = true,
 		name = "catppuccin",
 	},
 
 	{
 		"mcchrish/zenbones.nvim",
-
 		name = "zenbones",
 		lazy = true,
 		dependencies = {
@@ -66,30 +68,37 @@ return {
 
 	{
 		"projekt0n/github-nvim-theme",
-
-		lazy = false,
+		lazy = true,
 		config = function()
 			require("github-theme").setup()
 		end,
 	},
 
 	{
-		"sainnhe/gruvbox-material",
-
+		"ellisonleao/gruvbox.nvim",
 		lazy = true,
 		config = function()
-			vim.g.gruvbox_material_background = "hard" -- medium, hard
-			vim.g.gruvbox_material_better_performance = 1
+			require("gruvbox").setup({
+				contrast = "hard",
+			})
 		end,
 	},
 
 	{
 		"sainnhe/everforest",
-
 		lazy = true,
 		config = function()
 			vim.g.everforest_background = "hard"
 			vim.g.everforest_better_performance = 1
+		end,
+	},
+
+	{
+		"maxmx03/solarized.nvim",
+		lazy = true,
+		opts = {},
+		config = function(_, opts)
+			require("solarized").setup(opts)
 		end,
 	},
 }
