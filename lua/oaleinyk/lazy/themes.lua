@@ -1,7 +1,8 @@
 return {
 	{
 		"oxfist/night-owl.nvim",
-		lazy = true,
+		lazy = false,
+    priority = 1000,
 		config = function()
 			require("night-owl").setup()
 		end,
@@ -39,11 +40,10 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = false,
-    priority = 1000,
+		lazy = true,
 		config = function()
 			require("rose-pine").setup({
-				variant = "moon", -- auto, main, moon, or dawn
+				variant = "main", -- auto, main, moon, or dawn
 				styles = {
 					italic = false,
 				},
@@ -85,11 +85,38 @@ return {
 	},
 
 	{
+		"sainnhe/gruvbox-material",
+		lazy = true,
+		config = function()
+			vim.g.gruvbox_material_background = "hard"
+			vim.g.gruvbox_material_better_performance = 1
+		end,
+	},
+
+	{
 		"sainnhe/everforest",
 		lazy = true,
 		config = function()
-			vim.g.everforest_background = "hard"
+			vim.g.everforest_background = "soft"
 			vim.g.everforest_better_performance = 1
+		end,
+	},
+
+	{
+		"sainnhe/edge",
+		lazy = true,
+		config = function()
+			vim.g.edge_style = "aura"
+			vim.g.edge_better_performance = 1
+		end,
+	},
+
+	{
+		"sainnhe/sonokai",
+		lazy = true,
+		config = function()
+			vim.g.sonokai_style = "default"
+			vim.g.sonokai_better_performance = 1
 		end,
 	},
 

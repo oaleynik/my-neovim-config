@@ -1,10 +1,7 @@
 return {
 	"folke/trouble.nvim",
-
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-	},
-
+	opts = {},
+	cmd = "Trouble",
 	keys = {
 		{
 			"<leader>xx",
@@ -37,6 +34,4 @@ return {
 			desc = "Quickfix List (Trouble)",
 		},
 	},
-
-	opts = {},
 }
