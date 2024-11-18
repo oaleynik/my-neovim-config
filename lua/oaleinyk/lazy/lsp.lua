@@ -38,6 +38,7 @@ return {
 
 		require("mason-lspconfig").setup({
 			ensure_installed = {
+				"ast_grep",
 				"biome",
 				"cssls",
 				"gopls",
