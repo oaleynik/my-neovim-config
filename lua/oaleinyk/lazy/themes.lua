@@ -8,7 +8,8 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
@@ -39,8 +40,7 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		config = function()
 			require("rose-pine").setup({
 				variant = "main", -- auto, main, moon, or dawn
