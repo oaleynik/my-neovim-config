@@ -1,15 +1,15 @@
 return {
 	{
 		"oxfist/night-owl.nvim",
-		lazy = true,
+		lazy = false,
+    priority = 1000,
 		config = function()
 			require("night-owl").setup()
 		end,
 	},
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
