@@ -1,3 +1,5 @@
+local js_stack_formatters = { "prettierd", "biome", stop_after_first = true }
+
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
@@ -22,13 +24,13 @@ return {
 	},
 	opts = {
 		formatters_by_ft = {
-			javascript = { "biome", "prettierd", stop_after_first = true },
-			javascriptreact = { "biome", "prettierd", stop_after_first = true },
-			typescript = { "biome", "prettierd", stop_after_first = true },
-			typescriptreact = { "biome", "prettierd", stop_after_first = true },
-			json = { "biome", "prettierd", stop_after_first = true },
-			jsonc = { "biome", "prettierd", stop_after_first = true },
-			css = { "biome", "prettierd", stop_after_first = true },
+			javascript = js_stack_formatters,
+			javascriptreact = js_stack_formatters,
+			typescript = js_stack_formatters,
+			typescriptreact = js_stack_formatters,
+			json = js_stack_formatters,
+			jsonc = js_stack_formatters,
+			css = js_stack_formatters,
 			graphql = { "prettierd", stop_after_first = true },
 			html = { "prettierd", stop_after_first = true },
 			lua = { "stylua" },
