@@ -56,6 +56,12 @@ nmap("<C-j>", "<C-w>j")
 nmap("<C-k>", "<C-w>k")
 nmap("<C-l>", "<C-w>l")
 
+-- Easy tabs management and navigation
+nmap("<leader>tt", ":tabnew<CR>")
+nmap("<leader>tx", ":tabclose<CR>")
+nmap("]t", ":tabnext<CR>")
+nmap("[t", ":tabprevious<CR>")
+
 -- Reselect visual block after indent/outdent
 vmap("<", "<gv")
 vmap(">", ">gv")
