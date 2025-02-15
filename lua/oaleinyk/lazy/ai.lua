@@ -7,8 +7,8 @@ return {
 			vim.g.copilot_workspace_folders = { vim.fn.getcwd() }
 		end,
 		keys = {
-			{ "<Tab>", "copilot#Accept()", { expr = true, silent = true, mode = "i" } },
-			{ "<M-]>", "copilot#Next()", { expr = true, silent = true, mode = "i" } },
+			{ "<Tab>", "<Plug>(copilot-accept-line)", { expr = true, silent = true, mode = "i" } },
+			{ "<M-]>", "<Plug>(copilot-next)", { expr = true, silent = true, mode = "i" } },
 		},
 	},
 }
