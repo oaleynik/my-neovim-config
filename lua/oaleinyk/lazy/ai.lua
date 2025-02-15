@@ -1,15 +1,14 @@
 return {
 	{
 		"github/copilot.vim",
-
-		config = function()
-			local opts = {
-				silent = true,
-				noremap = true,
-			}
-
-			vim.keymap.set("i", "<C-]>", "<Plug>(copilot-next)", opts)
-			vim.keymap.set("i", "<C-[>", "<Plug>(copilot-previous)", opts)
+		event = "VimEnter",
+		init = function()
+			vim.g.copilot_no_tab_map = false
+			vim.g.copilot_workspace_folders = { vim.fn.getcwd() }
 		end,
+		keys = {
+			{ "<Tab>", "copilot#Accept()", { expr = true, silent = true, mode = "i" } },
+			{ "<M-]>", "copilot#Next()", { expr = true, silent = true, mode = "i" } },
+		},
 	},
 }
