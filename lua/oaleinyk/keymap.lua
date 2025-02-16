@@ -56,6 +56,9 @@ nmap("<C-j>", "<C-w>j")
 nmap("<C-k>", "<C-w>k")
 nmap("<C-l>", "<C-w>l")
 
+-- Easy buffer management
+nmap("<leader>bx", ":bd<CR>")
+
 -- Easy tabs management and navigation
 nmap("<leader>tt", ":tabnew<CR>")
 nmap("<leader>tx", ":tabclose<CR>")
