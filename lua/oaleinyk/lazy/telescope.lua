@@ -92,10 +92,6 @@ return {
 			})
 		end, opts)
 
-		vim.keymap.set("n", "ff", function()
-			builtin.current_buffer_fuzzy_find()
-		end, opts)
-
 		vim.keymap.set("n", ";r", function()
 			builtin.live_grep({
 				additional_args = function()
@@ -116,22 +112,10 @@ return {
 			builtin.buffers()
 		end, opts)
 
-		vim.keymap.set("n", ";t", function()
-			builtin.help_tags()
-		end, opts)
-
-		vim.keymap.set("n", ";h", function()
-			builtin.builtin()
-		end, opts)
-
 		vim.keymap.set("n", ";;", function()
 			builtin.resume({
 				initial_mode = "normal",
 			})
-		end, opts)
-
-		vim.keymap.set("n", ";e", function()
-			builtin.diagnostics()
 		end, opts)
 
 		vim.keymap.set("n", ";w", function()
