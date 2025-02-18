@@ -32,16 +32,6 @@ return {
 	},
 
 	{
-		"sourcegraph/sg.nvim",
-
-		lazy = true,
-
-		config = function()
-			require("sg").setup({})
-		end,
-	},
-
-	{
 		"numToStr/Comment.nvim",
 
 		dependencies = {
