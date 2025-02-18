@@ -4,12 +4,14 @@ return {
 	lazy = false,
 	---@type snacks.Config
 	opts = {
-		styles = {},
 		lazygit = {},
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 		},
+		statuscolumn = {},
+		gitbrowse = {},
+		styles = {},
 	},
 
 	keys = {
@@ -19,6 +21,14 @@ return {
 				Snacks.lazygit()
 			end,
 			desc = "Open LazyGit",
+		},
+		{
+			"<leader>gB",
+			function()
+				Snacks.gitbrowse()
+			end,
+			desc = "Git Browse",
+			mode = { "n", "v" },
 		},
 		{
 			"<leader>n",
