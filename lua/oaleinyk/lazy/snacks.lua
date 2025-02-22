@@ -7,7 +7,6 @@ return {
     bigfile = { enabled = true },
     explorer = {
       enabled = true,
-      replace_netrw = false,
     },
     input = { enabled = true },
     notifier = { enabled = true, timeout = 3000 },
@@ -15,13 +14,9 @@ return {
       enabled = true,
       sources = {
         explorer = {
-          auto_close = true,
+          jump = { close = true },
           layout = {
-            preset = "vscode",
-            layout = {
-              width = 0.6,
-              height = 0.5,
-            },
+            preset = "select",
           },
         },
       },
