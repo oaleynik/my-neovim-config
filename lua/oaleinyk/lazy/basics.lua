@@ -4,9 +4,6 @@ return {
 	"tpope/vim-fugitive",
 	"ryanoasis/vim-devicons",
 	"tjdevries/colorbuddy.nvim",
-	"tpope/vim-surround",
-	"tpope/vim-vinegar",
-	"tpope/vim-unimpaired",
 
 	{
 		"folke/todo-comments.nvim",
