@@ -27,8 +27,21 @@ return {
 			function()
 				Snacks.gitbrowse()
 			end,
-			desc = "Git Browse",
+			desc = "Git Browse (Open)",
 			mode = { "n", "v" },
+		},
+		{
+			"<leader>gY",
+			function()
+				Snacks.gitbrowse({
+					open = function(url)
+						vim.fn.setreg("+", url)
+					end,
+					notify = false,
+				})
+			end,
+			desc = "Git Browse (Copy)",
+			mode = { "n", "x" },
 		},
 		{
 			"<leader>n",
