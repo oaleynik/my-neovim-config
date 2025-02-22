@@ -5,11 +5,29 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    explorer = { enabled = true },
+    explorer = {
+      enabled = true,
+      replace_netrw = false,
+    },
     input = { enabled = true },
     notifier = { enabled = true, timeout = 3000 },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      sources = {
+        explorer = {
+          auto_close = true,
+          layout = {
+            preset = "vscode",
+            layout = {
+              width = 0.6,
+              height = 0.5,
+            },
+          },
+        },
+      },
+    },
     quickfile = { enabled = true },
+    scope = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
   },
