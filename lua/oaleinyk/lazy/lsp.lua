@@ -179,7 +179,6 @@ return {
 			virtual_text = false,
 		})
 
-		vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 		vim.keymap.set("n", "[e", function()
 			vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
 		end)

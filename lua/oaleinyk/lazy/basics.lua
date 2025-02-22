@@ -1,12 +1,7 @@
 return {
 	"nvim-lua/plenary.nvim",
-	"mattn/emmet-vim",
-	"tpope/vim-fugitive",
 	"ryanoasis/vim-devicons",
 	"tjdevries/colorbuddy.nvim",
-	"tpope/vim-surround",
-	"tpope/vim-vinegar",
-	"tpope/vim-unimpaired",
 
 	{
 		"folke/todo-comments.nvim",
@@ -28,16 +23,6 @@ return {
 				default = true,
 				override = {},
 			})
-		end,
-	},
-
-	{
-		"sourcegraph/sg.nvim",
-
-		lazy = true,
-
-		config = function()
-			require("sg").setup({})
 		end,
 	},
 
