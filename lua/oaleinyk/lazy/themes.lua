@@ -2,13 +2,12 @@ return {
 	{
 		"oxfist/night-owl.nvim",
 		lazy = true,
-		config = function()
-			require("night-owl").setup()
-		end,
+		config = function() require("night-owl").setup() end,
 	},
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
@@ -68,9 +67,7 @@ return {
 	{
 		"projekt0n/github-nvim-theme",
 		lazy = true,
-		config = function()
-			require("github-theme").setup()
-		end,
+		config = function() require("github-theme").setup() end,
 	},
 
 	{
@@ -85,8 +82,7 @@ return {
 
 	{
 		"sainnhe/gruvbox-material",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_better_performance = 1
@@ -124,8 +120,6 @@ return {
 		"maxmx03/solarized.nvim",
 		lazy = true,
 		opts = {},
-		config = function(_, opts)
-			require("solarized").setup(opts)
-		end,
+		config = function(_, opts) require("solarized").setup(opts) end,
 	},
 }
