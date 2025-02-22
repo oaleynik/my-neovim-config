@@ -44,5 +44,19 @@ return {
 			end,
 			desc = "Dismiss All Notifications",
 		},
+		{
+			"<leader>bd",
+			function()
+				Snacks.bufdelete()
+			end,
+			desc = "Delete Buffer",
+		},
+		{
+			"<leader>bo",
+			function()
+				Snacks.bufdelete.other()
+			end,
+			desc = "Delete Other Buffers",
+		},
 	},
 }
