@@ -1,7 +1,5 @@
 return {
 	"nvim-lua/plenary.nvim",
-	"mattn/emmet-vim",
-	"tpope/vim-fugitive",
 	"ryanoasis/vim-devicons",
 	"tjdevries/colorbuddy.nvim",
 
