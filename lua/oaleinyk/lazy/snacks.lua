@@ -87,6 +87,10 @@ return {
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Delete Other Buffers" },
 
+    -- Words
+    { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
+    { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+
     --stylua: ignore end
   },
 }
