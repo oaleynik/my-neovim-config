@@ -18,6 +18,7 @@ return {
     --stylua: ignore start
 
     -- Top Pickers & Explorer
+    { "<leader><space>", function() Snacks.picker.resume() end, desc = "Resume last used picker" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
     { "<leader>;", function() Snacks.picker.files() end, desc = "Find Files" },
