@@ -28,7 +28,7 @@ return {
 
 	keys = {
 		-- Top Pickers & Explorer
-		{ "<leader><space>", function() Snacks.picker.resume() end, desc = "Resume last used picker" },
+		{ "<leader>;;", function() Snacks.picker.resume() end, desc = "Resume" },
 		{ "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
 		{ "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
 		{ "<leader>;", function() Snacks.picker.files() end, desc = "Find Files" },
@@ -87,9 +87,9 @@ return {
 		{ "<leader>sM", function() Snacks.picker.man() end, desc = "Man Pages" },
 		{ "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
 		{ "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
-		{ "<leader>sR", function() Snacks.picker.resume() end, desc = "Resume" },
 		{ "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
 		{ "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
+		{ "<leader>sf", function() Snacks.explorer() end, desc = "File Explorer" },
 
 		-- Notifications
 		{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
