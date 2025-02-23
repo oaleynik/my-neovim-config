@@ -24,6 +24,7 @@ return {
 			},
 		},
 		quickfile = { enabled = true },
+		scope = { enabled = true },
 		statuscolumn = { enabled = true },
 	},
 
