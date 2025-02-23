@@ -30,7 +30,7 @@ return {
 
 	keys = {
 		-- Top Pickers & Explorer
-		{ "<leader>;;", function() Snacks.picker.resume() end, desc = "Resume" },
+		{ "<leader><space>", function() Snacks.picker.resume() end, desc = "Resume" },
 		{ "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
 		{ "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
 		{ "<leader>;", function() Snacks.picker.files() end, desc = "Find Files" },
