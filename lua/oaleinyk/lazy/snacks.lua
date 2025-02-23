@@ -7,6 +7,7 @@ return {
 		bigfile = { enabled = true },
 		explorer = {
 			enabled = true,
+			replace_netrw = false,
 		},
 		input = { enabled = true },
 		notifier = { enabled = true, timeout = 3000 },
