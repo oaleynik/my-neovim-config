@@ -5,7 +5,6 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"folke/neodev.nvim",
-		"j-hui/fidget.nvim",
 
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
@@ -22,7 +21,6 @@ return {
 
 	config = function()
 		require("neodev").setup()
-		require("fidget").setup({})
 		require("mason").setup()
 
 		local lspconfig = require("lspconfig")
