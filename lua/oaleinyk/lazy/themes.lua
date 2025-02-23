@@ -74,9 +74,10 @@ return {
 		"ellisonleao/gruvbox.nvim",
 		lazy = true,
 		config = function()
-			require("gruvbox").setup({
-				contrast = "hard",
-			})
+			local mod = require("gruvbox")
+			local config = vim.tbl_extend("force", mod.config, { contrast = "hard" })
+
+			mod.setup(config)
 		end,
 	},
 
