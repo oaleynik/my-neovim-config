@@ -18,7 +18,7 @@ return {
 					auto_close = true,
 					jump = { close = true },
 					layout = {
-						preset = "select",
+						preset = "ivy",
 					},
 				},
 			},
