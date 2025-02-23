@@ -15,6 +15,7 @@ return {
 			enabled = true,
 			sources = {
 				explorer = {
+					auto_close = true,
 					jump = { close = true },
 					layout = {
 						preset = "select",
