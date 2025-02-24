@@ -21,21 +21,6 @@ return {
 	},
 
 	{
-		"savq/melange",
-		lazy = true,
-	},
-
-	{
-		"dracula/vim",
-		lazy = true,
-	},
-
-	{
-		"nyoom-engineering/oxocarbon.nvim",
-		lazy = true,
-	},
-
-	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = true,
