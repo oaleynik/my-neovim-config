@@ -177,14 +177,6 @@ return {
 			virtual_text = false,
 		})
 
-		vim.keymap.set("n", "[e", function()
-			vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
-		end)
-		vim.keymap.set("n", "]e", function()
-			vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
-		end)
-		vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
-
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
@@ -202,12 +194,6 @@ return {
 				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 				vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 				vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-				vim.keymap.set("n", "<leader>sl", function()
-					vim.diagnostic.open_float({
-						scope = "line",
-						border = "rounded",
-					})
-				end, opts)
 			end,
 		})
 
