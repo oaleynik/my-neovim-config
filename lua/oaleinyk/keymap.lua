@@ -77,24 +77,8 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 -- New file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
--- Location list
-map("n", "<leader>xl", function()
-	local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
-end, { desc = "Location List" })
-
--- Quickfix list
-map("n", "<leader>xq", function()
-	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
-end, { desc = "Quickfix List" })
-
-map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
-map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
+map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix", silent = true })
+map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix", silent = true })
 
 -- Diagnostic
 local diagnostic_goto = function(next, severity)
