@@ -84,11 +84,18 @@ map("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix", silent = true })
 local diagnostic_goto = function(next, severity)
 	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
 	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+	return function() go({ severity = severity }) end
 end
-map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map(
+	"n",
+	"<leader>cd",
+	function()
+		vim.diagnostic.open_float({
+			border = "rounded",
+		})
+	end,
+	{ desc = "Line Diagnostics" }
+)
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
