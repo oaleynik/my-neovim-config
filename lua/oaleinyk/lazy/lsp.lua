@@ -107,6 +107,18 @@ return {
 						handlers = lsp_handlers,
 					})
 				end,
+
+				["rust_analyzer"] = function()
+					lspconfig["rust_analyzer"].setup({
+						settings = {
+							["rust-analyzer"] = {
+								check = {
+									command = "clippy",
+								},
+							},
+						},
+					})
+				end,
 			},
 		})
 
