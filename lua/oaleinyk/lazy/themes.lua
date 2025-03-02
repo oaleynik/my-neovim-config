@@ -11,7 +11,8 @@ return {
 
 	{
 		"EdenEast/nightfox.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
@@ -36,7 +37,6 @@ return {
 	{
 		"catppuccin/nvim",
 		lazy = false,
-		priority = 1000,
 		name = "catppuccin",
 	},
 
