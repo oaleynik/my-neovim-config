@@ -6,8 +6,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
@@ -26,7 +25,7 @@ return {
 		lazy = true,
 		config = function()
 			require("rose-pine").setup({
-				variant = "moon", -- auto, main, moon, or dawn
+				variant = "auto", -- auto, main, moon, or dawn
 				styles = {
 					italic = false,
 				},
@@ -36,7 +35,8 @@ return {
 
 	{
 		"catppuccin/nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		name = "catppuccin",
 	},
 
