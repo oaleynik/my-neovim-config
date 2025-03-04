@@ -1,5 +1,10 @@
 return {
 	{
+		"olimorris/onedarkpro.nvim",
+		lazy = true,
+	},
+
+	{
 		"oxfist/night-owl.nvim",
 		lazy = true,
 		config = function() require("night-owl").setup() end,
