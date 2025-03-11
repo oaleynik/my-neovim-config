@@ -12,8 +12,7 @@ return {
 
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
@@ -23,7 +22,8 @@ return {
 
 	{
 		"rebelot/kanagawa.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
