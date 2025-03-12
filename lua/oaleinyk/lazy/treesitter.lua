@@ -5,7 +5,13 @@ return {
 		build = ":TSUpdate",
 		lazy = vim.fn.argc(-1) == 0,
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+		---@type TSConfig
+		---@diagnostic disable:missing-fields
 		opts = {
+			auto_install = true,
+			ignore_install = {
+				"comment",
+			},
 			ensure_installed = {
 				"css",
 				"gitcommit",
@@ -27,6 +33,8 @@ return {
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
+			incremental_selection = { enable = true },
+			playground = { enable = true },
 		},
 	},
 }
