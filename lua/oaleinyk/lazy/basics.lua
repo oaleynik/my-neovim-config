@@ -2,10 +2,6 @@ return {
 	"nvim-lua/plenary.nvim",
 	"ryanoasis/vim-devicons",
 	"tjdevries/colorbuddy.nvim",
-	{
-		"folke/lazydev.nvim",
-		ft = "lua", -- only load on lua files
-	},
 
 	{
 		"folke/todo-comments.nvim",
