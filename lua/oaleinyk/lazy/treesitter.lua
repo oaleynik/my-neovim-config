@@ -7,6 +7,7 @@ return {
 		---@type TSConfig
 		---@diagnostic disable:missing-fields
 		opts = {
+			sync_install = false,
 			auto_install = true,
 			ignore_install = {
 				"comment",
