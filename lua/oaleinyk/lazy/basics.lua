@@ -10,9 +10,7 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 
-		config = function()
-			require("todo-comments").setup({})
-		end,
+		config = function() require("todo-comments").setup({}) end,
 	},
 
 	{
@@ -29,9 +27,7 @@ return {
 	{
 		"norcalli/nvim-colorizer.lua",
 
-		config = function()
-			require("colorizer").setup({ "*" })
-		end,
+		config = function() require("colorizer").setup({ "*" }) end,
 	},
 
 	{
@@ -66,8 +62,6 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
+		config = function() require("nvim-ts-autotag").setup() end,
 	},
 }
