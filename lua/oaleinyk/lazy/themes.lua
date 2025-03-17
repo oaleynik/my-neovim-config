@@ -22,14 +22,14 @@ return {
 
 	{
 		"rebelot/kanagawa.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
 				variant = "moon", -- auto, main, moon, or dawn
@@ -58,7 +58,7 @@ return {
 	{
 		"projekt0n/github-nvim-theme",
 		lazy = true,
-		config = function() require("github-theme").setup() end,
+		init = function() require("github-theme").setup() end,
 	},
 
 	{
