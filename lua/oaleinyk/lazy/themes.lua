@@ -114,4 +114,9 @@ return {
 		opts = {},
 		config = function(_, opts) require("solarized").setup(opts) end,
 	},
+
+	{
+		"vague2k/vague.nvim",
+		lazy = true,
+	},
 }
