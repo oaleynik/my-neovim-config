@@ -12,13 +12,13 @@ return {
 
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
 		"EdenEast/nightfox.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
