@@ -83,7 +83,7 @@ return {
 		{ "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
 		{ "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
 		{ "<leader>sm", function() Snacks.picker.marks() end, desc = "Marks" },
-		{ "<leader>sp", function() Snacks.picker.lazy() end, desc = "Search for Plugin Spec" },
+		{ "<leader>sp", function() Snacks.picker.pickers() end, desc = "Built-in Pickers" },
 		{ "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
 		{ "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
 		{ "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
