@@ -39,11 +39,6 @@ return {
 			local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
 				.. "/node_modules/@vue/language-server"
 
-			local lsp_handlers = {
-				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
-				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
-			}
-
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
 
@@ -66,7 +61,6 @@ return {
 					function(server_name)
 						lspconfig[server_name].setup({
 							capabilities = cmplsp.default_capabilities(),
-							handlers = lsp_handlers,
 						})
 					end,
 
@@ -78,7 +72,6 @@ return {
 									hybridMode = false,
 								},
 							},
-							handlers = lsp_handlers,
 						})
 					end,
 
@@ -94,7 +87,6 @@ return {
 								},
 							},
 							capabilities = cmplsp.default_capabilities(),
-							handlers = lsp_handlers,
 						})
 					end,
 
@@ -114,7 +106,6 @@ return {
 									gofumpt = true,
 								},
 							},
-							handlers = lsp_handlers,
 						})
 					end,
 
