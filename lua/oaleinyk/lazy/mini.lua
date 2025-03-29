@@ -2,6 +2,7 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		version = false,
+		enabled = false,
 		init = function()
 			require("mini.ai").setup()
 			require("mini.align").setup()
