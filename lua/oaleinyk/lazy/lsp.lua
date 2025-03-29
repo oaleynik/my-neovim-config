@@ -21,28 +21,20 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lua",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/nvim-cmp",
-			"saadparwaiz1/cmp_luasnip",
-			"L3MON4D3/LuaSnip",
-			"onsails/lspkind.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
+			"saghen/blink.cmp",
 		},
 
 		config = function()
 			require("mason").setup()
 
 			local lspconfig = require("lspconfig")
-			local cmplsp = require("cmp_nvim_lsp")
 			local mason_registry = require("mason-registry")
 			local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
 				.. "/node_modules/@vue/language-server"
+
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			require("mason-lspconfig").setup({
 				automatic_installation = true,
@@ -65,13 +57,13 @@ return {
 				handlers = {
 					function(server_name)
 						lspconfig[server_name].setup({
-							capabilities = cmplsp.default_capabilities(),
+							capabilities = capabilities,
 						})
 					end,
 
 					["volar"] = function()
 						lspconfig["volar"].setup({
-							capabilities = cmplsp.default_capabilities(),
+							capabilities = capabilities,
 							init_options = {
 								vue = {
 									hybridMode = false,
@@ -82,6 +74,7 @@ return {
 
 					["ts_ls"] = function()
 						lspconfig["ts_ls"].setup({
+							capabilities = capabilities,
 							init_options = {
 								plugins = {
 									{
@@ -91,13 +84,12 @@ return {
 									},
 								},
 							},
-							capabilities = cmplsp.default_capabilities(),
 						})
 					end,
 
 					["gopls"] = function()
 						lspconfig["gopls"].setup({
-							capabilities = cmplsp.default_capabilities(),
+							capabilities = capabilities,
 							settings = {
 								gopls = {
 									analyses = {
@@ -116,6 +108,7 @@ return {
 
 					["rust_analyzer"] = function()
 						lspconfig["rust_analyzer"].setup({
+							capabilities = capabilities,
 							settings = {
 								["rust-analyzer"] = {
 									check = {
@@ -125,67 +118,6 @@ return {
 							},
 						})
 					end,
-				},
-			})
-
-			local cmp = require("cmp")
-			local lspkind = require("lspkind")
-			local luasnip = require("luasnip")
-
-			cmp.setup({
-				snippet = {
-					expand = function(args) luasnip.lsp_expand(args.body) end,
-				},
-
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-
-				mapping = cmp.mapping.preset.insert({
-					["<C-j>"] = cmp.mapping.select_next_item(),
-					["<C-k>"] = cmp.mapping.select_prev_item(),
-					["<C-h>"] = cmp.mapping.abort(),
-					["<C-l>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Replace,
-						select = true,
-					}),
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Replace,
-						select = true,
-					}),
-				}),
-
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "nvim_lua" },
-					{ name = "path" },
-					{ name = "luasnip" },
-				}, {
-					{
-						name = "buffer",
-						keyword_length = 6,
-					},
-				}),
-
-				formatting = {
-					fields = { "abbr", "kind", "menu" },
-					expandable_indicator = false,
-					format = lspkind.cmp_format({
-						mode = "symbol_text",
-						preset = "default",
-						menu = {
-							buffer = "[buf]",
-							nvim_lsp = "[LSP]",
-							path = "[path]",
-							nvim_lua = "[api]",
-							luasnip = "[snip]",
-						},
-					}),
 				},
 			})
 
@@ -202,15 +134,35 @@ return {
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-				callback = function(ev)
-					-- Enable completion triggered by <c-x><c-o>
-					vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+				callback = function(args)
+					local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-					-- Buffer local mappings.
-					-- See `:help vim.lsp.*` for documentation on any of the below functions
-					local opts = { buffer = ev.buf }
-					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					if client:supports_method("textDocument/implementation") then
+						vim.keymap.set(
+							"n",
+							"gI",
+							function() vim.lsp.buf.implementation({ reuse_win = true }) end,
+							{ buffer = args.buf, desc = "Go to Implementation" }
+						)
+					end
+
+					if client:supports_method("textDocument/definition") then
+						vim.keymap.set(
+							"n",
+							"gd",
+							function() vim.lsp.buf.definition({ reuse_win = true }) end,
+							{ buffer = args.buf, desc = "Go to Definition" }
+						)
+					end
+
+					if client:supports_method("textDocument/declaration") then
+						vim.keymap.set(
+							"n",
+							"gD",
+							function() vim.lsp.buf.declaration({ reuse_win = true }) end,
+							{ buffer = args.buf, desc = "Go to Declaration" }
+						)
+					end
 				end,
 			})
 
