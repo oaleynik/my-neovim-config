@@ -127,8 +127,8 @@ return {
 
 				-- Alternatively, customize specific options
 				virtual_lines = {
-				 -- Only show virtual line diagnostics for the current cursor line
-				 current_line = true,
+					-- Only show virtual line diagnostics for the current cursor line
+					current_line = true,
 				},
 			})
 
