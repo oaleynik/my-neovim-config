@@ -36,6 +36,6 @@ vim.o.background = "dark"
 -- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme solarized")
 -- vim.cmd("colorscheme sonokai")
-vim.cmd("colorscheme tokyonight-storm")
+vim.cmd("colorscheme tokyonight-night")
 -- vim.cmd("colorscheme zenwritten")
 -- vim.cmd("colorscheme vague")
