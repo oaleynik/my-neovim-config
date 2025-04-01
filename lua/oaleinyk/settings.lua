@@ -61,9 +61,11 @@ vim.o.undodir = HOME .. "/.vim/tmp/undo//" -- undo files
 vim.o.backupdir = HOME .. "/.vim/tmp/backup//" -- backups
 vim.o.directory = "/.vim/tmp/swap//" -- swap files
 
--- netrw
+-- built-in plugins
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_zipPlugin = 1
+vim.g.loaded_zip = 1
 
 -- Commands mode
 vim.o.wildmenu = true -- on TAB, complete options for system command
