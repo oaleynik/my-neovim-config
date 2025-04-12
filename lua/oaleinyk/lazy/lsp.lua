@@ -61,6 +61,20 @@ return {
 						})
 					end,
 
+					["lua_ls"] = function()
+						lspconfig["lua_ls"].setup({
+							capabilities = capabilities,
+							settings = {
+								Lua = {
+									hints = {
+										enable = true,
+									},
+									telemetry = { enable = false },
+								},
+							},
+						})
+					end,
+
 					["volar"] = function()
 						lspconfig["volar"].setup({
 							capabilities = capabilities,
@@ -84,6 +98,32 @@ return {
 									},
 								},
 							},
+							settings = {
+								typescript = {
+									inlayHints = {
+										includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayVariableTypeHints = true,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayEnumMemberValueHints = true,
+									},
+								},
+								javascript = {
+									inlayHints = {
+										includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayVariableTypeHints = true,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayEnumMemberValueHints = true,
+									},
+								},
+							},
 						})
 					end,
 
@@ -97,6 +137,15 @@ return {
 										shadow = true,
 										nilness = true,
 										unusedwrite = true,
+									},
+									hints = {
+										rangeVariableTypes = true,
+										parameterNames = true,
+										constantValues = true,
+										assignVariableTypes = true,
+										compositeLiteralFields = true,
+										compositeLiteralTypes = true,
+										functionTypeParameters = true,
 									},
 									staticcheck = true,
 									experimentalPostfixCompletions = true,
@@ -113,6 +162,38 @@ return {
 								["rust-analyzer"] = {
 									check = {
 										command = "clippy",
+									},
+									inlayHints = {
+										bindingModeHints = {
+											enable = false,
+										},
+										chainingHints = {
+											enable = true,
+										},
+										closingBraceHints = {
+											enable = true,
+											minLines = 25,
+										},
+										closureReturnTypeHints = {
+											enable = "never",
+										},
+										lifetimeElisionHints = {
+											enable = "never",
+											useParameterNames = false,
+										},
+										maxLength = 25,
+										parameterHints = {
+											enable = true,
+										},
+										reborrowHints = {
+											enable = "never",
+										},
+										renderColons = true,
+										typeHints = {
+											enable = true,
+											hideClosureInitialization = false,
+											hideNamedConstructor = false,
+										},
 									},
 								},
 							},
