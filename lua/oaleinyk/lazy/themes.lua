@@ -12,8 +12,7 @@ return {
 
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
@@ -63,7 +62,8 @@ return {
 
 	{
 		"ellisonleao/gruvbox.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			local mod = require("gruvbox")
 			local config = vim.tbl_extend("force", mod.config, { contrast = "hard" })
