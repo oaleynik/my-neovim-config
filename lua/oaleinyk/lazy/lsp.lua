@@ -206,9 +206,8 @@ return {
 				-- Use the default configuration
 				-- virtual_lines = true,
 
-				-- Alternatively, customize specific options
+				-- Alternatively, show virtual lines only for the current line
 				virtual_lines = {
-					-- Only show virtual line diagnostics for the current cursor line
 					current_line = true,
 				},
 			})
