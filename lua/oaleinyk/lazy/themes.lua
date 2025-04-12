@@ -62,8 +62,7 @@ return {
 
 	{
 		"ellisonleao/gruvbox.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		config = function()
 			local mod = require("gruvbox")
 			local config = vim.tbl_extend("force", mod.config, { contrast = "hard" })
@@ -74,7 +73,8 @@ return {
 
 	{
 		"sainnhe/gruvbox-material",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_better_performance = 1
