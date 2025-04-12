@@ -53,9 +53,9 @@ return {
 		{ "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
 		{ "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
 		{ "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (Hunks)" },
-		{ "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse (Open)", mode = { "n", "v" } },
+		{ "<leader>go", function() Snacks.gitbrowse() end, desc = "Git Browse (Open)", mode = { "n", "v" } },
 		{
-			"<leader>gY",
+			"<leader>gy",
 			function()
 				local opts = Snacks.config.get("gitbrowse", {}, {
 					open = function(url) vim.fn.setreg("+", url) end,
