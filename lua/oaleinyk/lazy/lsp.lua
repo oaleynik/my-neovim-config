@@ -217,15 +217,6 @@ return {
 				callback = function(args)
 					local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 
-					if client:supports_method("textDocument/implementation") then
-						vim.keymap.set(
-							"n",
-							"gI",
-							function() vim.lsp.buf.implementation({ reuse_win = true }) end,
-							{ buffer = args.buf, desc = "Go to Implementation" }
-						)
-					end
-
 					if client:supports_method("textDocument/definition") then
 						vim.keymap.set(
 							"n",
