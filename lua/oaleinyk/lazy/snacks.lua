@@ -47,7 +47,6 @@ return {
 
 		-- Git
 		{ "<leader>gg", function() Snacks.lazygit() end, desc = "Open LazyGit" },
-		{ "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
 		{ "<leader>gl", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
 		{ "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
 		{ "<leader>gL", function() Snacks.picker.git_log() end, desc = "Git Log" },
