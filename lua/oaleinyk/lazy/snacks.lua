@@ -15,6 +15,8 @@ return {
 			enabled = true,
 			sources = {
 				explorer = {
+					hidden = true,
+					ignored = true,
 					auto_close = true,
 					jump = { close = true },
 					layout = {
