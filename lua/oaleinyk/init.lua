@@ -28,12 +28,12 @@ require("lazy").setup({
 vim.o.background = "dark"
 
 -- vim.cmd("colorscheme catppuccin-latte")
-vim.cmd("colorscheme nightfox")
+-- vim.cmd("colorscheme nightfox")
 -- vim.cmd("colorscheme edge")
 -- vim.cmd("colorscheme everforest")
 -- vim.cmd("colorscheme github_dark_default")
 -- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme gruvbox-material")
 -- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme night-owl")
 -- vim.cmd("colorscheme onedark")
