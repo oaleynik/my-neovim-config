@@ -73,6 +73,33 @@ return {
               { buffer = args.buf, desc = "Go to Declaration" }
             )
           end
+
+          -- Diagnostics by severity
+          vim.keymap.set("n", "]e", function()
+            vim.diagnostic.jump({
+              count = 1,
+              severity = { min = vim.diagnostic.severity.ERROR },
+            })
+          end, { desc = "Next Error" })
+          vim.keymap.set("n", "[e", function()
+            vim.diagnostic.jump({
+              count = -1,
+              severity = { min = vim.diagnostic.severity.ERROR },
+            })
+          end, { desc = "Prev Error" })
+
+          vim.keymap.set("n", "]w", function()
+            vim.diagnostic.jump({
+              count = 1,
+              severity = { min = vim.diagnostic.severity.WARN },
+            })
+          end, { desc = "Next Warning" })
+          vim.keymap.set("n", "[w", function()
+            vim.diagnostic.jump({
+              count = -1,
+              severity = { min = vim.diagnostic.severity.WARN },
+            })
+          end, { desc = "Prev Warning" })
         end,
       })
     end,
