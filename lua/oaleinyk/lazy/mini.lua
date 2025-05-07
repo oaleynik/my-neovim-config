@@ -5,7 +5,6 @@ return {
     init = function()
       require("mini.ai").setup()
       require("mini.align").setup()
-      require("mini.bracketed").setup()
       require("mini.comment").setup()
       require("mini.move").setup()
       require("mini.pairs").setup()
