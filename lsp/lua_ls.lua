@@ -1,10 +1,10 @@
 return {
-	settings = {
-		Lua = {
-			hints = {
-				enable = true,
-			},
-			telemetry = { enable = false },
-		},
-	},
+  settings = {
+    Lua = {
+      hints = {
+        enable = true,
+      },
+      telemetry = { enable = false },
+    },
+  },
 }
