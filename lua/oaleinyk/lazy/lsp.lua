@@ -87,6 +87,10 @@ return {
           vim.keymap.set("n", "[w", diagnostic_goto(false, vim.diagnostic.severity.WARN),
             { buffer = args.buf, desc = "Prev Warning" })
 
+          -- Line diagnostics
+          vim.keymap.set("n", "<leader>cd", function()
+            vim.diagnostic.open_float(nil, { focus = false })
+          end, { buffer = args.buf, desc = "Line Diagnostics" })
         end,
       })
     end,
