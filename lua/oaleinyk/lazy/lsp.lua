@@ -47,6 +47,13 @@ return {
         },
       })
 
+      local function diagnostic_goto(next, severity)
+        local count = next and 1 or -1
+        return function()
+          vim.diagnostic.jump({ count = count, severity = { min = severity } })
+        end
+      end
+
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(args)
@@ -71,31 +78,15 @@ return {
           end
 
           -- Diagnostics by severity
-          vim.keymap.set("n", "]e", function()
-            vim.diagnostic.jump({
-              count = 1,
-              severity = { min = vim.diagnostic.severity.ERROR },
-            })
-          end, { desc = "Next Error" })
-          vim.keymap.set("n", "[e", function()
-            vim.diagnostic.jump({
-              count = -1,
-              severity = { min = vim.diagnostic.severity.ERROR },
-            })
-          end, { desc = "Prev Error" })
+          vim.keymap.set("n", "]e", diagnostic_goto(true, vim.diagnostic.severity.ERROR),
+            { buffer = args.buf, desc = "Next Error" })
+          vim.keymap.set("n", "[e", diagnostic_goto(false, vim.diagnostic.severity.ERROR),
+            { buffer = args.buf, desc = "Prev Error" })
+          vim.keymap.set("n", "]w", diagnostic_goto(true, vim.diagnostic.severity.WARN),
+            { buffer = args.buf, desc = "Next Warning" })
+          vim.keymap.set("n", "[w", diagnostic_goto(false, vim.diagnostic.severity.WARN),
+            { buffer = args.buf, desc = "Prev Warning" })
 
-          vim.keymap.set("n", "]w", function()
-            vim.diagnostic.jump({
-              count = 1,
-              severity = { min = vim.diagnostic.severity.WARN },
-            })
-          end, { desc = "Next Warning" })
-          vim.keymap.set("n", "[w", function()
-            vim.diagnostic.jump({
-              count = -1,
-              severity = { min = vim.diagnostic.severity.WARN },
-            })
-          end, { desc = "Prev Warning" })
         end,
       })
     end,
