@@ -40,7 +40,7 @@ return {
 					"lua_ls",
 					"rust_analyzer",
 					"tailwindcss",
-					"ts_ls",
+					"vtsls",
 					"vue_ls",
 					"yamlls",
 					"zls",
