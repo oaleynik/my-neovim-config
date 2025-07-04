@@ -35,6 +35,7 @@ return {
 					"biome",
 					"cssls",
 					"dprint",
+					"golangci_lint_ls",
 					"gopls",
 					"html",
 					"lua_ls",
