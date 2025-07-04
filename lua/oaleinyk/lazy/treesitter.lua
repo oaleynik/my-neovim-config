@@ -30,6 +30,7 @@ return {
 				"typescript",
 				"vimdoc",
 				"vue",
+				"zig",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },
