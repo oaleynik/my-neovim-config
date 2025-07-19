@@ -28,7 +28,7 @@ require("lazy").setup({
 vim.o.background = "light"
 
 -- vim.cmd("colorscheme catppuccin-latte")
--- vim.cmd("colorscheme dayfox")
+vim.cmd("colorscheme dayfox")
 -- vim.cmd("colorscheme edge")
 -- vim.cmd("colorscheme everforest")
 -- vim.cmd("colorscheme github_dark_default")
