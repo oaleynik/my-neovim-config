@@ -31,7 +31,7 @@ vim.o.background = "light"
 vim.cmd("colorscheme dayfox")
 -- vim.cmd("colorscheme edge")
 -- vim.cmd("colorscheme everforest")
--- vim.cmd("colorscheme github_dark_default")
+vim.cmd("colorscheme github_light")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme gruvbox-material")
 -- vim.cmd("colorscheme kanagawa")
