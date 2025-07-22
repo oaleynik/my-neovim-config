@@ -6,8 +6,7 @@ return {
 
 	{
 		"oxfist/night-owl.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		config = function() require("night-owl").setup() end,
 	},
 
@@ -23,7 +22,8 @@ return {
 
 	{
 		"rebelot/kanagawa.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
