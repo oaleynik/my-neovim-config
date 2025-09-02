@@ -1,7 +1,7 @@
 return {
 	{
-		"echasnovski/mini.nvim",
-		version = false,
+		"nvim-mini/mini.nvim",
+		version = "*",
 		init = function()
 			require("mini.ai").setup()
 			require("mini.align").setup()
