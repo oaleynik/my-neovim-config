@@ -129,6 +129,14 @@ return {
 						function() vim.diagnostic.open_float(nil, { focus = false }) end,
 						{ buffer = args.buf, desc = "Line Diagnostics" }
 					)
+
+					-- Set qflist
+					vim.keymap.set(
+						"n",
+						"<leader>q",
+						function() vim.diagnostic.setqflist() end,
+						{ buffer = args.buf, desc = "Add buffer diagnostics to qflist" }
+					)
 				end,
 			})
 		end,
