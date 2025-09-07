@@ -125,7 +125,7 @@ return {
 					-- Line diagnostics
 					vim.keymap.set(
 						"n",
-						"<leader>cd",
+						"<leader>xx",
 						function() vim.diagnostic.open_float(nil, { focus = false }) end,
 						{ buffer = args.buf, desc = "Line Diagnostics" }
 					)
