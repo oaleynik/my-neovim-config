@@ -12,8 +12,7 @@ return {
 
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
@@ -49,7 +48,8 @@ return {
 	{
 		"mcchrish/zenbones.nvim",
 		name = "zenbones",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		dependencies = {
 			"rktjmp/lush.nvim",
 		},

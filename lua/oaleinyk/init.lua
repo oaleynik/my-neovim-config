@@ -28,7 +28,6 @@ require("lazy").setup({
 vim.o.background = "dark"
 
 -- vim.cmd("colorscheme catppuccin-frappe")
--- vim.cmd("colorscheme nightfox")
 -- vim.cmd("colorscheme edge")
 -- vim.cmd("colorscheme everforest")
 -- vim.cmd("colorscheme github_light_default")
@@ -36,10 +35,12 @@ vim.o.background = "dark"
 -- vim.cmd("colorscheme gruvbox-material")
 -- vim.cmd("colorscheme kanagawa-wave")
 -- vim.cmd("colorscheme night-owl")
--- vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme nightfox")
+-- vim.cmd("colorscheme onelight")
 -- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme solarized")
 -- vim.cmd("colorscheme sonokai")
-vim.cmd("colorscheme tokyonight-night")
--- vim.cmd("colorscheme zenwritten")
+-- vim.cmd("colorscheme tokyonight-night")
 -- vim.cmd("colorscheme vague")
+-- vim.cmd("colorscheme vscode")
+vim.cmd("colorscheme neobones")
