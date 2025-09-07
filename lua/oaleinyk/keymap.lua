@@ -77,7 +77,3 @@ map("n", "<leader>\\", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 vim.o.splitbelow = true -- when splitting horizontally, move coursor to lower pane
 vim.o.splitright = true -- when splitting vertically, move coursor to right pane
-
--- Quit
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
-map("n", "<leader>qf", "<cmd>qa!<cr>", { desc = "Quit All (Force)" })
