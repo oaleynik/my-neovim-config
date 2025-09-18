@@ -28,10 +28,11 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("rose-pine").setup({
-				variant = "moon", -- auto, main, moon, or dawn
+				variant = "auto", -- auto, main, moon, or dawn
 				styles = {
 					italic = false,
 				},
@@ -48,8 +49,7 @@ return {
 	{
 		"mcchrish/zenbones.nvim",
 		name = "zenbones",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		dependencies = {
 			"rktjmp/lush.nvim",
 		},
