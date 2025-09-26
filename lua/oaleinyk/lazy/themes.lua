@@ -17,7 +17,8 @@ return {
 
 	{
 		"EdenEast/nightfox.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
@@ -73,8 +74,7 @@ return {
 
 	{
 		"sainnhe/gruvbox-material",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		config = function()
 			vim.g.gruvbox_material_background = "hard"
 			vim.g.gruvbox_material_better_performance = 1
