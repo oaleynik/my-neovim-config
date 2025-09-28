@@ -12,13 +12,13 @@ return {
 
 	{
 		"folke/tokyonight.nvim",
-		lazy = true,
+		lazy = false,
+		priority = 1000,
 	},
 
 	{
 		"EdenEast/nightfox.nvim",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 	},
 
 	{
@@ -106,6 +106,16 @@ return {
 		config = function()
 			vim.g.sonokai_style = "default"
 			vim.g.sonokai_better_performance = 1
+		end,
+	},
+
+	{
+		"loctvl842/monokai-pro.nvim",
+		lazy = true,
+		config = function()
+			require("monokai-pro").setup({
+				filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+			})
 		end,
 	},
 
