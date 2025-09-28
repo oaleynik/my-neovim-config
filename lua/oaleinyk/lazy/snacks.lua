@@ -32,7 +32,8 @@ return {
 
 	keys = {
 		-- Top Pickers & Explorer
-		{ "<leader><space>", function() Snacks.picker.resume() end, desc = "Resume" },
+		{ "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+		{ "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
 		{ "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
 		{ "<leader>:", function() Snacks.picker.command_history() end, desc = "Command History" },
 		{ "<leader>;", function() Snacks.picker.files() end, desc = "Find Files" },
@@ -90,6 +91,7 @@ return {
 		{ "<leader>sd", function() Snacks.picker.diagnostics_buffer() end, desc = "Buffer Diagnostics" },
 		{ "<leader>sD", function() Snacks.picker.diagnostics() end, desc = "Diagnostics" },
 		{ "<leader>sh", function() Snacks.picker.help() end, desc = "Help Pages" },
+		{ "<leader>sH", function() Snacks.picker.highlights() end, desc = "Highlights" },
 		{ "<leader>si", function() Snacks.picker.icons() end, desc = "Icons" },
 		{ "<leader>sk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
 		{ "<leader>sl", function() Snacks.picker.loclist() end, desc = "Location List" },
@@ -98,7 +100,6 @@ return {
 		{ "<leader>sq", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
 		{ "<leader>su", function() Snacks.picker.undo() end, desc = "Undo History" },
 		{ "<leader>uC", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
-		{ "<leader>sf", function() Snacks.explorer() end, desc = "File Explorer" },
 
 		-- Notifications
 		{ "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
