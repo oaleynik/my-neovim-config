@@ -13,19 +13,11 @@ return {
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {},
 				always_divide_middle = true,
-				globalstatus = false,
+				globalstatus = true,
 			},
 			sections = {
 				lualine_a = {
 					{ "branch", icon = "" },
-					{
-						"diff",
-						diff_color = {
-							added = { fg = Snacks.util.color("DiffAdd", "bg") },
-							modified = { fg = Snacks.util.color("DiffChange", "bg") },
-							removed = { fg = Snacks.util.color("DiffDelete", "bg") },
-						},
-					},
 					{
 						"diagnostics",
 						{
@@ -40,7 +32,21 @@ return {
 				},
 				lualine_b = {},
 				lualine_c = {},
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = {
+					{
+						"diff",
+						symbols = {
+							added = " ",
+							modified = " ",
+							removed = " ",
+						},
+						diff_color = {
+							added = { fg = Snacks.util.color("MiniDiffSignAdd") },
+							modified = { fg = Snacks.util.color("MiniDiffSignChange") },
+							removed = { fg = Snacks.util.color("MiniDiffSignDelete") },
+						},
+					},
+				},
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
