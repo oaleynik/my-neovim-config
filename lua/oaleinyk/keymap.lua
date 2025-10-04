@@ -38,6 +38,21 @@ map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
+-- Terminal mode navigation
+map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go to Left Window" })
+map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Go to Lower Window" })
+map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go to Upper Window" })
+map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to Right Window" })
+map("t", "jk", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
+
+-- Auto enter insert mode when switching to terminal
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
+	pattern = "term://*",
+	callback = function()
+		vim.cmd("startinsert")
+	end,
+})
+
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
