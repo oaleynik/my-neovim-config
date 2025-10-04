@@ -24,9 +24,13 @@ map({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without update of paste r
 
 -- Better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+
+-- No arrows
+map("n", "<Up>", "<Nop>")
+map("n", "<Down>", "<Nop>")
+map("n", "<Left>", "<Nop>")
+map("n", "<Right>", "<Nop>")
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
