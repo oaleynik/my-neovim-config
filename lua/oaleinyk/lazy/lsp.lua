@@ -33,7 +33,6 @@ return {
 				ensure_installed = {
 					"ast_grep",
 					"biome",
-					"copilot",
 					"cssls",
 					"dprint",
 					"golangci_lint_ls",
