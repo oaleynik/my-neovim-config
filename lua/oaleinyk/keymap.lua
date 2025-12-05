@@ -48,9 +48,7 @@ map("t", "jk", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 -- Auto enter insert mode when switching to terminal
 vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
 	pattern = "term://*",
-	callback = function()
-		vim.cmd("startinsert")
-	end,
+	callback = function() vim.cmd("startinsert") end,
 })
 
 -- Resize window using <ctrl> arrow keys
@@ -82,6 +80,10 @@ map("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- New file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+
+-- Copy file paths
+map("n", "<leader>cp", function() vim.fn.setreg("+", vim.fn.expand("%:.")) end, { desc = "Copy relative file path" })
+map("n", "<leader>cP", function() vim.fn.setreg("+", vim.fn.expand("%:p")) end, { desc = "Copy absolute file path" })
 
 -- Highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
