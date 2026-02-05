@@ -20,13 +20,11 @@ return {
 					{ "branch", icon = "" },
 					{
 						"diagnostics",
-						{
-							diagnostics_color = {
-								error = { fg = Snacks.util.color("DiagnosticError") },
-								warn = { fg = Snacks.util.color("DiagnosticWarn") },
-								info = { fg = Snacks.util.color("DiagnosticInfo") },
-								hint = { fg = Snacks.util.color("DiagnosticHint") },
-							},
+						diagnostics_color = {
+							error = { fg = Snacks.util.color("DiagnosticError") },
+							warn = { fg = Snacks.util.color("DiagnosticWarn") },
+							info = { fg = Snacks.util.color("DiagnosticInfo") },
+							hint = { fg = Snacks.util.color("DiagnosticHint") },
 						},
 					},
 				},
