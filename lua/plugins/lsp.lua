@@ -79,17 +79,8 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(args)
-					local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
 					local map = function(mode, lhs, rhs, desc)
 						vim.keymap.set(mode, lhs, rhs, { buffer = args.buf, desc = desc })
-					end
-
-					if client:supports_method("textDocument/definition") then
-						map("n", "gd", function() vim.lsp.buf.definition({ reuse_win = true }) end, "Go to Definition")
-					end
-
-					if client:supports_method("textDocument/declaration") then
-						map("n", "gD", function() vim.lsp.buf.declaration({ reuse_win = true }) end, "Go to Declaration")
 					end
 
 					map("n", "]e", diagnostic_goto(true, vim.diagnostic.severity.ERROR), "Next Error")

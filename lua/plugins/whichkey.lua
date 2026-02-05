@@ -7,6 +7,9 @@ return {
 		spec = {
 			{ "<leader>c", group = "Code" },
 			{ "<leader>f", group = "File" },
+			{ "<leader>g", group = "Git" },
+			{ "<leader>h", group = "Hunk" },
+			{ "<leader>s", group = "Search" },
 			{ "<leader>u", group = "UI" },
 			{ "<leader>w", group = "Window" },
 			{ "<leader>x", group = "Diagnostics" },
