@@ -1,4 +1,4 @@
-HOME = os.getenv("HOME")
+local HOME = os.getenv("HOME")
 
 -- Basic settings
 vim.o.encoding = "utf-8"
@@ -59,7 +59,7 @@ vim.o.writebackup = false
 vim.o.swapfile = false -- do not use swap file
 vim.o.undodir = HOME .. "/.vim/tmp/undo//" -- undo files
 vim.o.backupdir = HOME .. "/.vim/tmp/backup//" -- backups
-vim.o.directory = "/.vim/tmp/swap//" -- swap files
+vim.o.directory = HOME .. "/.vim/tmp/swap//" -- swap files
 
 -- built-in plugins
 vim.g.loaded_netrw = 1
