@@ -55,17 +55,23 @@ return {
 
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				pattern = "*.go",
-				callback = function()
-					local params = vim.lsp.util.make_range_params(vim.api.nvim_get_current_win(), "utf-16")
+				callback = function(args)
+					local clients = vim.lsp.get_clients({ bufnr = args.buf, method = "textDocument/codeAction" })
+					if #clients == 0 then return end
 
-					local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+					local encoding = clients[1].offset_encoding or "utf-16"
+					local params = vim.lsp.util.make_range_params(0, encoding)
+					params.context = { only = { "source.organizeImports" } }
+
+					local result = vim.lsp.buf_request_sync(args.buf, "textDocument/codeAction", params, 3000)
 					for cid, res in pairs(result or {}) do
 						for _, r in pairs(res.result or {}) do
 							if r.edit then
-								if r.kind == "source.organizeImports" then
-									local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-									vim.lsp.util.apply_workspace_edit(r.edit, enc)
-								end
+								local client = vim.lsp.get_client_by_id(cid)
+								local enc = client and client.offset_encoding or encoding
+								vim.lsp.util.apply_workspace_edit(r.edit, enc)
+							elseif r.command then
+								vim.lsp.buf.execute_command(r.command)
 							end
 						end
 					end
@@ -126,7 +132,7 @@ return {
 					vim.keymap.set(
 						"n",
 						"<leader>xx",
-						function() vim.diagnostic.open_float(nil, { focus = false }) end,
+						function() vim.diagnostic.open_float({ focus = false }) end,
 						{ buffer = args.buf, desc = "Line Diagnostics" }
 					)
 
