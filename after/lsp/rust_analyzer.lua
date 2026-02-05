@@ -1,24 +1,25 @@
 return {
 	settings = {
-		gopls = {
-			analyses = {
-				unusedparams = true,
-				shadow = true,
-				nilness = true,
-				unusedwrite = true,
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true,
+				loadOutDirsFromCheck = true,
 			},
-			hints = {
-				rangeVariableTypes = true,
-				parameterNames = true,
-				constantValues = true,
-				assignVariableTypes = true,
-				compositeLiteralFields = true,
-				compositeLiteralTypes = true,
-				functionTypeParameters = true,
+			checkOnSave = true,
+			check = {
+				command = "clippy",
 			},
-			staticcheck = true,
-			experimentalPostfixCompletions = true,
-			gofumpt = true,
+			procMacro = {
+				enable = true,
+			},
+			inlayHints = {
+				bindingModeHints = { enable = true },
+				closureCaptureHints = { enable = true },
+				closureReturnTypeHints = { enable = "always" },
+				lifetimeElisionHints = { enable = "always" },
+				parameterHints = { enable = true },
+				typeHints = { enable = true },
+			},
 		},
 	},
 }
