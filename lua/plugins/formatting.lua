@@ -35,7 +35,7 @@ return {
 			rust = { "rustfmt", lsp_format = "fallback" },
 			typescript = { "biome", "prettierd", stop_after_first = true },
 			typescriptreact = { "biome", "prettierd", stop_after_first = true },
-			vue = { "prettierd", stop_after_first = true },
+			vue = { "biome", "prettierd", stop_after_first = true },
 			yaml = { "prettierd", stop_after_first = true },
 		},
 		formatters = {
